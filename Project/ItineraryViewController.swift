@@ -56,10 +56,30 @@ class ItineraryListViewController: UITableViewController {
     
     // manually add new to do
     @IBAction func addToDo (_ sender: AnyObject) {
-        if let index = itinerary.generateToDo("Example To Do", "With some detail") {
-            let indexPath = NSIndexPath(row: index, section: TODOS)
-            tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+        //create a pop-up alert
+        let inputToDo = UIAlertController(title: "Add To-Do", message: "Enter somewhere to go and some details about it", preferredStyle: .alert)
+        //programmatically add text fields for inputting a to-do item
+        inputToDo.addTextField { (textField) in
+            textField.text = "" //no default text
         }
+        inputToDo.addTextField { (textField) in
+            textField.text = "" //no default text
+        }
+        //on OK,
+        inputToDo.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            let bodyTextField = inputToDo.textFields![0]
+            let detailTextField = inputToDo.textFields![1]
+            //if user entered text,
+            if bodyTextField.text != "" {
+                //add to table
+                if let index = self.itinerary.generateToDo(bodyTextField.text!, detailTextField.text!) {
+                    let indexPath = NSIndexPath(row: index, section: self.TODOS)
+                    self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+                }
+            }
+        }))
+        //do the pop-up alert
+        self.present(inputToDo, animated: true, completion: nil)
     }
     
     // get number of sections

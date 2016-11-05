@@ -56,10 +56,26 @@ class PackingListViewController: UITableViewController {
 
     // manually add new to do
     @IBAction func addToDo (_ sender: AnyObject) {
-        if let index = packingList.generateToDo("Example To Do") {
-            let indexPath = NSIndexPath(row: index, section: TODOS)
-            tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+        //create a pop-up alert
+        let inputToDo = UIAlertController(title: "Add To-Do", message: "Enter something to pack", preferredStyle: .alert)
+        //programmatically add text field for inputting a to-do item
+        inputToDo.addTextField { (textField) in
+            textField.text = "" //no default text
         }
+        //on OK,
+        inputToDo.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            let textField = inputToDo.textFields![0]
+            //if user entered text,
+            if textField.text != "" {
+                //add to table
+                if let index = self.packingList.generateToDo(textField.text!) {
+                    let indexPath = NSIndexPath(row: index, section: self.TODOS)
+                    self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+                }
+            }
+        }))
+        //do the pop-up alert
+        self.present(inputToDo, animated: true, completion: nil)
     }
     
     // get number of sections
