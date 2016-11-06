@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PackingListViewController: UITableViewController {
+class PackingListViewController: UITableViewController, UITextFieldDelegate {
     
     let SUGGESTED_TODOS = 0
     let TODOS = 1

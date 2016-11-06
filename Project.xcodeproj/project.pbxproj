@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8D4EEFC41DCE39220018A6FA /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EEFC31DCE39220018A6FA /* ItineraryViewController.swift */; };
-		8D4EEFC61DCE39C20018A6FA /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EEFC51DCE39C20018A6FA /* TravelViewController.swift */; };
 		8D4EEFD01DCE3D260018A6FA /* briefcase@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4EEFC71DCE3D260018A6FA /* briefcase@3X.png */; };
 		8D4EEFD11DCE3D260018A6FA /* briefcase@1X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4EEFC81DCE3D260018A6FA /* briefcase@1X.png */; };
 		8D4EEFD21DCE3D260018A6FA /* briefcase@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4EEFC91DCE3D260018A6FA /* briefcase@2X.png */; };
@@ -41,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		8D4EEFC31DCE39220018A6FA /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
-		8D4EEFC51DCE39C20018A6FA /* TravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
 		8D4EEFC71DCE3D260018A6FA /* briefcase@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "briefcase@3X.png"; path = "Project/briefcase@3X.png"; sourceTree = "<group>"; };
 		8D4EEFC81DCE3D260018A6FA /* briefcase@1X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "briefcase@1X.png"; path = "Project/briefcase@1X.png"; sourceTree = "<group>"; };
 		8D4EEFC91DCE3D260018A6FA /* briefcase@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "briefcase@2X.png"; path = "Project/briefcase@2X.png"; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				8D4EEFDF1DCE41880018A6FA /* Itinerary.swift */,
 				8D4EEFE31DCE46400018A6FA /* ToGoItem.swift */,
 				8D4EEFE51DCE46500018A6FA /* SuggestedToGoItem.swift */,
-				8D4EEFC51DCE39C20018A6FA /* TravelViewController.swift */,
 				8D6A61221DC009600092ACC3 /* Main.storyboard */,
 				8D6A61281DC009600092ACC3 /* Assets.xcassets */,
 				8D6A612A1DC009600092ACC3 /* LaunchScreen.storyboard */,
@@ -229,7 +226,6 @@
 				8D6A61211DC009600092ACC3 /* ViewController.swift in Sources */,
 				8DBEAAC11DC55B1A00F90388 /* ToDoCell.swift in Sources */,
 				8D4EEFE01DCE41880018A6FA /* Itinerary.swift in Sources */,
-				8D4EEFC61DCE39C20018A6FA /* TravelViewController.swift in Sources */,
 				8D4EEFEA1DCE4D490018A6FA /* LaunchScreenViewController.swift in Sources */,
 				8D4EEFE21DCE449A0018A6FA /* ToGoCell.swift in Sources */,
 				8D4EEFE61DCE46500018A6FA /* SuggestedToGoItem.swift in Sources */,

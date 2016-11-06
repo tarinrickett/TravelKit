@@ -26,7 +26,7 @@ class ItineraryListViewController: UITableViewController {
         tableView.scrollIndicatorInsets = insets
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 75
+        tableView.estimatedRowHeight = 100
         
         itinerary = Itinerary()
         if let indexArray = itinerary.generateSuggested() {
