@@ -8,11 +8,13 @@
 
 import UIKit
 
-class LaunchScreenViewController: UIViewController {
+class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var iconXL: NSLayoutConstraint!
     @IBOutlet weak var iconXR: NSLayoutConstraint!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
     
     //alpha and color animation
     func iconFadeIn() {
@@ -74,6 +76,21 @@ class LaunchScreenViewController: UIViewController {
             }
         )
         
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("YA WE GOOD")
+        return true
+    }
+    
+    //UITextFieldDelegate: dismiss keyboard and update label on return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("HELLO PLEASE")
+        nameField.resignFirstResponder()
+        if (nameField.text != nil) {
+            nameLabel.text! = nameField.text!
+        }
+        return true
     }
     
     override func viewDidLoad() {
