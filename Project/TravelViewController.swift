@@ -39,17 +39,19 @@ class TravelViewController: UITableViewController {
     @IBAction func toggleEditMode(_ sender: UIButton) {
         if isEditing == false {
             setEditing(true, animated: true)
-            sender.setTitle("Done", for: .normal)
+            sender.setTitle(NSLocalizedString("Done", comment: "Ticket Done"), for: .normal)
         } else {
             setEditing(false, animated: true)
-            sender.setTitle("Edit", for: .normal)
+            sender.setTitle(NSLocalizedString("Edit", comment: "Ticket Edit"), for: .normal)
         }
     }
     
     // manually add new to do
     @IBAction func addToDo (_ sender: AnyObject) {
         //create a pop-up alert
-        let inputToDo = UIAlertController(title: "Add Ticket", message: "Enter your travel ticket and some details", preferredStyle: .alert)
+        let inputToDo = UIAlertController(title: NSLocalizedString("Add Ticket", comment: "Ticket Add Title"),
+                                          message: NSLocalizedString("Enter your travel ticket and some details", comment: "Ticket Add Description"),
+                                          preferredStyle: .alert)
         //programmatically add text fields for inputting a to-do item
         inputToDo.addTextField { (textField) in
             textField.text = "" //no default text
@@ -58,7 +60,7 @@ class TravelViewController: UITableViewController {
             textField.text = "" //no default text
         }
         //on OK,
-        inputToDo.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+        inputToDo.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Itinerary Add OK"), style: .default, handler: { (_) in
             let bodyTextField = inputToDo.textFields![0]
             let detailTextField = inputToDo.textFields![1]
             //if user entered text,
@@ -83,7 +85,7 @@ class TravelViewController: UITableViewController {
     func getSectionHeader (_ sectionNumber: Int) -> String? {
         switch sectionNumber {
         case TODOS:
-            return "Tickets"
+            return NSLocalizedString("Tickets", comment: "Tickets Section Title")
         default:
             return nil
         }
@@ -108,8 +110,8 @@ class TravelViewController: UITableViewController {
             cell.body?.text = todo.body
             cell.detail?.text = todo.detail
         default:
-            cell.body?.text = "Unknown"
-            cell.detail?.text = "Unknown"
+            cell.body?.text = NSLocalizedString("Unknown", comment: "Ticket Unknown")
+            cell.detail?.text = NSLocalizedString("Unknown", comment: "Ticket Unknown")
         }
         
         return cell
@@ -135,15 +137,17 @@ class TravelViewController: UITableViewController {
     //
     
     func verifyDelete(_ name: String, _ delete: @escaping (UIAlertAction) -> Void) {
-        let title = "Delete \(name)?"
-        let message = "Are you sure that you want to delete this item?"
+        let title = NSLocalizedString("Delete \(name)?", comment: "Ticket Delete Title")
+        let message = NSLocalizedString("Are you sure that you want to delete this item?", comment: "Ticket Delete Message")
         
         let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Ticket Delete Cancel Option"),
+                                         style: .cancel, handler: nil)
         ac.addAction(cancelAction)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: delete)
+        let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: "Ticket Delete Delete Confirmation"),
+                                         style: .destructive, handler: delete)
         ac.addAction(deleteAction)
         
         present(ac, animated: true, completion: nil)

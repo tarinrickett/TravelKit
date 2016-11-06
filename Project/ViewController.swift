@@ -47,23 +47,28 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func toggleEditMode(_ sender: UIButton) {
         if isEditing == false {
             setEditing(true, animated: true)
-            sender.setTitle("Done", for: .normal)
+            sender.setTitle(NSLocalizedString("Done", comment: "To-Do Done"),
+                            for: .normal)
         } else {
             setEditing(false, animated: true)
-            sender.setTitle("Edit", for: .normal)
+            sender.setTitle(NSLocalizedString("Edit", comment: "To-Do Edit"),
+                            for: .normal)
         }
     }
 
     // manually add new to do
     @IBAction func addToDo (_ sender: AnyObject) {
         //create a pop-up alert
-        let inputToDo = UIAlertController(title: "Add To-Do", message: "Enter something to pack", preferredStyle: .alert)
+        let inputToDo = UIAlertController(title: NSLocalizedString("Add To-Do", comment: "To-Do Add Title"),
+                                          message: NSLocalizedString("Enter something to pack", comment: "To-Do Add Description"),
+                                          preferredStyle: .alert)
         //programmatically add text field for inputting a to-do item
         inputToDo.addTextField { (textField) in
             textField.text = "" //no default text
         }
         //on OK,
-        inputToDo.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+        inputToDo.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "To-Do Add OK"),
+                                          style: .default, handler: { (_) in
             let textField = inputToDo.textFields![0]
             //if user entered text,
             if textField.text != "" {
@@ -87,9 +92,9 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
     func getSectionHeader (_ sectionNumber: Int) -> String? {
         switch sectionNumber {
         case SUGGESTED_TODOS:
-            return "Suggested"
+            return NSLocalizedString("Suggested", comment: "To-Do Suggested Section Title")
         case TODOS:
-            return "To Dos"
+            return NSLocalizedString("To Dos", comment: "To-Do To Dos Section Title")
         default:
             return nil
         }
@@ -118,7 +123,7 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
             let todo = packingList.todos[path.row]
             cell.body?.text = todo.body
         default:
-            cell.body?.text = "Unknown"
+            cell.body?.text = NSLocalizedString("Unknown", comment: "To-Do Unknown")
         }
         
         return cell
@@ -151,15 +156,15 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
     //
     
     func verifyDelete(_ name: String, _ delete: @escaping (UIAlertAction) -> Void) {
-        let title = "Delete \(name)?"
-        let message = "Are you sure that you want to delete this item?"
+        let title = NSLocalizedString("Delete \(name)?", comment: "To-Do Delete Title")
+        let message = NSLocalizedString("Are you sure that you want to delete this item?", comment: "To-Do Delete Message")
         
         let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "To-Do Delete Cancel Option"), style: .cancel, handler: nil)
         ac.addAction(cancelAction)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: delete)
+        let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: "To-Do Delete Delete Confirmation"), style: .destructive, handler: delete)
         ac.addAction(deleteAction)
         
         present(ac, animated: true, completion: nil)

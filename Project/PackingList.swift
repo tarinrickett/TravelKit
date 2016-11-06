@@ -20,9 +20,9 @@ class PackingList: NSObject {
     //generate todos
     func generateSuggested () -> [Int]? {
         let localSuggestions = [
-            SuggestedToDoItem("Good walking shoes"),
-            SuggestedToDoItem("Toothbrush"),
-            SuggestedToDoItem("Wallet")]
+            SuggestedToDoItem(NSLocalizedString("Good walking shoes", comment: "To-Do Suggestion 1")),
+            SuggestedToDoItem(NSLocalizedString("Toothbrush", comment: "To-Do Suggestion 2")),
+            SuggestedToDoItem(NSLocalizedString("ID / Passport", comment: "To-Do Suggestion 3"))]
         return addSuggested(localSuggestions)
     }
     

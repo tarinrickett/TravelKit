@@ -47,17 +47,19 @@ class ItineraryListViewController: UITableViewController {
     @IBAction func toggleEditMode(_ sender: UIButton) {
         if isEditing == false {
             setEditing(true, animated: true)
-            sender.setTitle("Done", for: .normal)
+            sender.setTitle(NSLocalizedString("Done", comment: "Itinerary Done"), for: .normal)
         } else {
             setEditing(false, animated: true)
-            sender.setTitle("Edit", for: .normal)
+            sender.setTitle(NSLocalizedString("Edit", comment: "Itinerary Edit"), for: .normal)
         }
     }
     
     // manually add new to do
     @IBAction func addToDo (_ sender: AnyObject) {
         //create a pop-up alert
-        let inputToDo = UIAlertController(title: "Add To-Do", message: "Enter somewhere to go and some details about it", preferredStyle: .alert)
+        let inputToDo = UIAlertController(title: NSLocalizedString("Add To-Do", comment: "Itinerary Add Title"),
+                                          message: NSLocalizedString("Enter somewhere to go and some details about it", comment: "Itinerary Add Description"),
+                                          preferredStyle: .alert)
         //programmatically add text fields for inputting a to-do item
         inputToDo.addTextField { (textField) in
             textField.text = "" //no default text
@@ -66,7 +68,8 @@ class ItineraryListViewController: UITableViewController {
             textField.text = "" //no default text
         }
         //on OK,
-        inputToDo.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+        inputToDo.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Itinerary Add OK"),
+                                          style: .default, handler: { (_) in
             let bodyTextField = inputToDo.textFields![0]
             let detailTextField = inputToDo.textFields![1]
             //if user entered text,
@@ -91,9 +94,9 @@ class ItineraryListViewController: UITableViewController {
     func getSectionHeader (_ sectionNumber: Int) -> String? {
         switch sectionNumber {
         case SUGGESTED_TODOS:
-            return "Suggested"
+            return NSLocalizedString("Suggested", comment: "Itinerary Suggested Title")
         case TODOS:
-            return "To Gos"
+            return NSLocalizedString("To Gos", comment: "Itinerary To Gos Title")
         default:
             return nil
         }
@@ -124,8 +127,8 @@ class ItineraryListViewController: UITableViewController {
             cell.body?.text = todo.body
             cell.detail?.text = todo.detail
         default:
-            cell.body?.text = "Unknown"
-            cell.detail?.text = "Unknown"
+            cell.body?.text = NSLocalizedString("Unknown", comment: "Suggested Unknown")
+            cell.detail?.text = NSLocalizedString("Unknown", comment: "Suggested Unknown")
         }
         
         return cell
@@ -158,15 +161,15 @@ class ItineraryListViewController: UITableViewController {
     //
     
     func verifyDelete(_ name: String, _ delete: @escaping (UIAlertAction) -> Void) {
-        let title = "Delete \(name)?"
-        let message = "Are you sure that you want to delete this item?"
+        let title = NSLocalizedString("Delete \(name)?", comment: "Itinerary Delete Title")
+        let message = NSLocalizedString("Are you sure that you want to delete this item?", comment: "Itinerary Delete Message")
         
         let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Itinerary Delete Cancel Option"), style: .cancel, handler: nil)
         ac.addAction(cancelAction)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: delete)
+        let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: "Itinerary Delete Cancel Option"), style: .destructive, handler: delete)
         ac.addAction(deleteAction)
         
         present(ac, animated: true, completion: nil)

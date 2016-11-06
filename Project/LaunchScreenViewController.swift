@@ -79,13 +79,11 @@ class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print("YA WE GOOD")
         return true
     }
     
     //UITextFieldDelegate: dismiss keyboard and update label on return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("HELLO PLEASE")
         nameField.resignFirstResponder()
         if (nameField.text != nil) {
             nameLabel.text! = nameField.text!

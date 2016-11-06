@@ -29,6 +29,7 @@
 		8D4EF00F1DCEB78D0018A6FA /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EF00E1DCEB78D0018A6FA /* TravelViewController.swift */; };
 		8D4EF0111DCEB7AD0018A6FA /* TicketBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EF0101DCEB7AD0018A6FA /* TicketBook.swift */; };
 		8D4EF0131DCEBBD40018A6FA /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EF0121DCEBBD40018A6FA /* TicketCell.swift */; };
+		8D4EF0181DCECDEF0018A6FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D4EF01A1DCECDEF0018A6FA /* Localizable.strings */; };
 		8D6A611F1DC009600092ACC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A611E1DC009600092ACC3 /* AppDelegate.swift */; };
 		8D6A61211DC009600092ACC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A61201DC009600092ACC3 /* ViewController.swift */; };
 		8D6A61241DC009600092ACC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6A61221DC009600092ACC3 /* Main.storyboard */; };
@@ -66,6 +67,8 @@
 		8D4EF0121DCEBBD40018A6FA /* TicketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketCell.swift; sourceTree = "<group>"; };
 		8D4EF0141DCEC3D10018A6FA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		8D4EF0151DCEC3D10018A6FA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8D4EF0191DCECDEF0018A6FA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8D4EF01B1DCECDFB0018A6FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8D6A611B1DC009600092ACC3 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6A611E1DC009600092ACC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D6A61201DC009600092ACC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 				8D4EF0121DCEBBD40018A6FA /* TicketCell.swift */,
 				8D4EF0101DCEB7AD0018A6FA /* TicketBook.swift */,
 				8D6A61221DC009600092ACC3 /* Main.storyboard */,
+				8D4EF01A1DCECDEF0018A6FA /* Localizable.strings */,
 				8D6A61281DC009600092ACC3 /* Assets.xcassets */,
 				8D6A612A1DC009600092ACC3 /* LaunchScreen.storyboard */,
 				8D6A612D1DC009600092ACC3 /* Info.plist */,
@@ -206,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D4EF0181DCECDEF0018A6FA /* Localizable.strings in Resources */,
 				8D6A612C1DC009600092ACC3 /* LaunchScreen.storyboard in Resources */,
 				8D4EEFD71DCE3D260018A6FA /* ticket@1X.png in Resources */,
 				8D4EEFDC1DCE3FFF0018A6FA /* travelkit@3X.png in Resources */,
@@ -254,6 +259,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		8D4EF01A1DCECDEF0018A6FA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D4EF0191DCECDEF0018A6FA /* fr */,
+				8D4EF01B1DCECDFB0018A6FA /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		8D6A61221DC009600092ACC3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

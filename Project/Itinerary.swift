@@ -20,9 +20,12 @@ class Itinerary: NSObject {
     //generate todos
     func generateSuggested () -> [Int]? {
         let localSuggestions = [
-            SuggestedToGoItem("Art Museums", "Get cultured"),
-            SuggestedToGoItem("Street Festivals", "Sample local foods and crafts"),
-            SuggestedToGoItem("Watch the Sunset", "With a friend")]
+            SuggestedToGoItem(NSLocalizedString("Art museums", comment: "Itinerary Suggestion 1 Title"),
+                              NSLocalizedString("Get cultured", comment: "Itinerary Suggestion 1 Description")),
+            SuggestedToGoItem(NSLocalizedString("Street festivals", comment: "Itinerary Suggestion 2 Title"),
+                              NSLocalizedString("Sample local food and crafts", comment: "Itinerary Suggestion 2 Description")),
+            SuggestedToGoItem(NSLocalizedString("Watch the sunset", comment: "Itinerary Suggestion 3 Title"),
+                              NSLocalizedString("With a friend", comment: "Itinerary Suggestion 3 Description"))]
         return addSuggested(localSuggestions)
     }
     
