@@ -1,0 +1,48 @@
+
+/* Class = "UITabBarItem"; title = "Ticket Book"; ObjectID = "3dO-fT-onw"; */
+"3dO-fT-onw.title" = "Les Tickets";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "90s-Wd-19F"; */
+"90s-Wd-19F.normalTitle" = "Révisez";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BSq-pg-uoR"; */
+"BSq-pg-uoR.text" = "Le Label";
+
+/* Class = "UILabel"; text = "Happy Travels,"; ObjectID = "Upz-cE-g1A"; */
+"Upz-cE-g1A.text" = "Bon Voyage,";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WxL-Yc-OfK"; */
+"WxL-Yc-OfK.text" = "Le Label";
+
+/* Class = "UITabBarItem"; title = "Packing List"; ObjectID = "aFb-KF-mg2"; */
+"aFb-KF-mg2.title" = "La Valise";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "aJh-ru-orU"; */
+"aJh-ru-orU.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "cDe-lk-pQm"; */
+"cDe-lk-pQm.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "czo-u6-2A2"; */
+"czo-u6-2A2.normalTitle" = "Révisez";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "e98-l4-bRQ"; */
+"e98-l4-bRQ.text" = "Le Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gL0-DM-EUF"; */
+"gL0-DM-EUF.text" = "Le Label";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "hDk-LK-qxu"; */
+"hDk-LK-qxu.normalTitle" = "Révisez";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "hu2-6i-yXZ"; */
+"hu2-6i-yXZ.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nDj-9M-OTT"; */
+"nDj-9M-OTT.text" = "Le Label";
+
+/* Class = "UILabel"; text = "You!"; ObjectID = "oJq-KZ-1i1"; */
+"oJq-KZ-1i1.text" = "À Vouz!";
+
+/* Class = "UITabBarItem"; title = "Itinerary"; ObjectID = "tlg-57-D66"; */
+"tlg-57-D66.title" = "L'Itinéraire";
