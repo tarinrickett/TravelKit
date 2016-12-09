@@ -31,13 +31,9 @@ class PhotoViewController: UITableViewController, UINavigationControllerDelegate
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 185
         
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
-        
-//        if let img = ImageHelper.getImage(forUID: PhotoItem.selectedImageIDKey) {
-//            selectedImage = img
-//        }
+        let myApp = UIApplication.shared
+        let myDelegate = myApp.delegate as! AppDelegate
+        saveddata = myDelegate.saveddata
         
         photoJournal = PhotoJournal()
         

@@ -29,9 +29,9 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
+        let myApp = UIApplication.shared
+        let myDelegate = myApp.delegate as! AppDelegate
+        saveddata = myDelegate.saveddata
         
         ticketBook = TicketBook()
     }

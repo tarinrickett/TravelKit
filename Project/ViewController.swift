@@ -30,9 +30,9 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 75
         
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
+        let myApp = UIApplication.shared
+        let myDelegate = myApp.delegate as! AppDelegate
+        saveddata = myDelegate.saveddata
         
         packingList = PackingList()
         if let indexArray = packingList.generateSuggested() {

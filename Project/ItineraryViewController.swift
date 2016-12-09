@@ -30,9 +30,9 @@ class ItineraryListViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
+        let myApp = UIApplication.shared
+        let myDelegate = myApp.delegate as! AppDelegate
+        saveddata = myDelegate.saveddata
         
         itinerary = Itinerary()
         if let indexArray = itinerary.generateSuggested() {

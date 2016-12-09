@@ -96,9 +96,9 @@ class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
+        let myApp = UIApplication.shared
+        let myDelegate = myApp.delegate as! AppDelegate
+        saveddata = myDelegate.saveddata
         iconFadeIn()
     }
     
