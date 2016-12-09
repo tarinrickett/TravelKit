@@ -16,6 +16,8 @@ class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
     
+    var saveddata: SavedData!
+    
     //alpha and color animation
     func iconFadeIn() {
         UIView.animate(
@@ -94,6 +96,9 @@ class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        let myApp = UIApplication.shared
+//        let myDelegate = myApp.delegate as! AppDelegate
+//        saveddata = myDelegate.saveddata
         iconFadeIn()
     }
     

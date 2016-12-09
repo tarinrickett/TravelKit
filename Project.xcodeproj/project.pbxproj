@@ -36,10 +36,36 @@
 		8D6A61271DC009600092ACC3 /* Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A61251DC009600092ACC3 /* Project.xcdatamodeld */; };
 		8D6A61291DC009600092ACC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6A61281DC009600092ACC3 /* Assets.xcassets */; };
 		8D6A612C1DC009600092ACC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6A612A1DC009600092ACC3 /* LaunchScreen.storyboard */; };
+		8D99E6F51DEA785C00A1AE31 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99E6F41DEA785C00A1AE31 /* PhotoViewController.swift */; };
+		8D99E6F71DEA7A0500A1AE31 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99E6F61DEA7A0500A1AE31 /* ImageHelper.swift */; };
+		8D99E6F91DEA7A2300A1AE31 /* SavedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99E6F81DEA7A2300A1AE31 /* SavedData.swift */; };
+		8D99E6FB1DEA7A4200A1AE31 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99E6FA1DEA7A4200A1AE31 /* SaveData.swift */; };
+		8D99E7051DEA849600A1AE31 /* train@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D99E6FC1DEA849600A1AE31 /* train@2X.png */; };
+		8D99E7061DEA849600A1AE31 /* train@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D99E6FD1DEA849600A1AE31 /* train@3X.png */; };
+		8D99E7071DEA849600A1AE31 /* train@1X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D99E6FE1DEA849600A1AE31 /* train@1X.png */; };
+		8D99E7081DEA849600A1AE31 /* car@1X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D99E6FF1DEA849600A1AE31 /* car@1X.png */; };
+		8D99E7091DEA849600A1AE31 /* car@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D99E7001DEA849600A1AE31 /* car@3X.png */; };
+		8D99E70A1DEA849600A1AE31 /* car@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D99E7011DEA849600A1AE31 /* car@2X.png */; };
+		8D99E70B1DEA849600A1AE31 /* plane@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D99E7021DEA849600A1AE31 /* plane@2X.png */; };
+		8D99E70C1DEA849600A1AE31 /* plane@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D99E7031DEA849600A1AE31 /* plane@3X.png */; };
+		8D99E70D1DEA849600A1AE31 /* plane@1X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D99E7041DEA849600A1AE31 /* plane@1X.png */; };
 		8DBEAABB1DC5549100F90388 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBEAABA1DC5549100F90388 /* ToDoItem.swift */; };
 		8DBEAABD1DC5555100F90388 /* SuggestedToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBEAABC1DC5555100F90388 /* SuggestedToDoItem.swift */; };
 		8DBEAABF1DC555AF00F90388 /* PackingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBEAABE1DC555AF00F90388 /* PackingList.swift */; };
 		8DBEAAC11DC55B1A00F90388 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBEAAC01DC55B1A00F90388 /* ToDoCell.swift */; };
+		8DEF7C2C1DEC992300EEBB53 /* walk@1X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF7C261DEC992300EEBB53 /* walk@1X.png */; };
+		8DEF7C2D1DEC992300EEBB53 /* pin@1X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF7C271DEC992300EEBB53 /* pin@1X.png */; };
+		8DEF7C2E1DEC992300EEBB53 /* walk@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF7C281DEC992300EEBB53 /* walk@2X.png */; };
+		8DEF7C2F1DEC992300EEBB53 /* pin@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF7C291DEC992300EEBB53 /* pin@2X.png */; };
+		8DEF7C301DEC992300EEBB53 /* walk@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF7C2A1DEC992300EEBB53 /* walk@3X.png */; };
+		8DEF7C311DEC992300EEBB53 /* pin@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF7C2B1DEC992300EEBB53 /* pin@3X.png */; };
+		8DEF7C331DECA8C500EEBB53 /* TicketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF7C321DECA8C500EEBB53 /* TicketItem.swift */; };
+		8DEF7C371DECEAA400EEBB53 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF7C361DECEAA400EEBB53 /* PhotoCell.swift */; };
+		8DEF7C3B1DECED3300EEBB53 /* photojournal@1X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF7C381DECED3300EEBB53 /* photojournal@1X.png */; };
+		8DEF7C3C1DECED3300EEBB53 /* photojournal@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF7C391DECED3300EEBB53 /* photojournal@2X.png */; };
+		8DEF7C3D1DECED3300EEBB53 /* photojournal@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF7C3A1DECED3300EEBB53 /* photojournal@3X.png */; };
+		8DEF7C3F1DED050A00EEBB53 /* PhotoJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF7C3E1DED050A00EEBB53 /* PhotoJournal.swift */; };
+		8DEF7C411DED052500EEBB53 /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF7C401DED052500EEBB53 /* PhotoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,10 +103,36 @@
 		8D6A61281DC009600092ACC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D6A612B1DC009600092ACC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D6A612D1DC009600092ACC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D99E6F41DEA785C00A1AE31 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		8D99E6F61DEA7A0500A1AE31 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		8D99E6F81DEA7A2300A1AE31 /* SavedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedData.swift; sourceTree = "<group>"; };
+		8D99E6FA1DEA7A4200A1AE31 /* SaveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
+		8D99E6FC1DEA849600A1AE31 /* train@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "train@2X.png"; path = "Project/train@2X.png"; sourceTree = "<group>"; };
+		8D99E6FD1DEA849600A1AE31 /* train@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "train@3X.png"; path = "Project/train@3X.png"; sourceTree = "<group>"; };
+		8D99E6FE1DEA849600A1AE31 /* train@1X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "train@1X.png"; path = "Project/train@1X.png"; sourceTree = "<group>"; };
+		8D99E6FF1DEA849600A1AE31 /* car@1X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "car@1X.png"; path = "Project/car@1X.png"; sourceTree = "<group>"; };
+		8D99E7001DEA849600A1AE31 /* car@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "car@3X.png"; path = "Project/car@3X.png"; sourceTree = "<group>"; };
+		8D99E7011DEA849600A1AE31 /* car@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "car@2X.png"; path = "Project/car@2X.png"; sourceTree = "<group>"; };
+		8D99E7021DEA849600A1AE31 /* plane@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plane@2X.png"; path = "Project/plane@2X.png"; sourceTree = "<group>"; };
+		8D99E7031DEA849600A1AE31 /* plane@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plane@3X.png"; path = "Project/plane@3X.png"; sourceTree = "<group>"; };
+		8D99E7041DEA849600A1AE31 /* plane@1X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plane@1X.png"; path = "Project/plane@1X.png"; sourceTree = "<group>"; };
 		8DBEAABA1DC5549100F90388 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		8DBEAABC1DC5555100F90388 /* SuggestedToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedToDoItem.swift; sourceTree = "<group>"; };
 		8DBEAABE1DC555AF00F90388 /* PackingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackingList.swift; sourceTree = "<group>"; };
 		8DBEAAC01DC55B1A00F90388 /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		8DEF7C261DEC992300EEBB53 /* walk@1X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "walk@1X.png"; path = "Project/walk@1X.png"; sourceTree = "<group>"; };
+		8DEF7C271DEC992300EEBB53 /* pin@1X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pin@1X.png"; path = "Project/pin@1X.png"; sourceTree = "<group>"; };
+		8DEF7C281DEC992300EEBB53 /* walk@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "walk@2X.png"; path = "Project/walk@2X.png"; sourceTree = "<group>"; };
+		8DEF7C291DEC992300EEBB53 /* pin@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pin@2X.png"; path = "Project/pin@2X.png"; sourceTree = "<group>"; };
+		8DEF7C2A1DEC992300EEBB53 /* walk@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "walk@3X.png"; path = "Project/walk@3X.png"; sourceTree = "<group>"; };
+		8DEF7C2B1DEC992300EEBB53 /* pin@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pin@3X.png"; path = "Project/pin@3X.png"; sourceTree = "<group>"; };
+		8DEF7C321DECA8C500EEBB53 /* TicketItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketItem.swift; sourceTree = "<group>"; };
+		8DEF7C361DECEAA400EEBB53 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		8DEF7C381DECED3300EEBB53 /* photojournal@1X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photojournal@1X.png"; path = "Project/photojournal@1X.png"; sourceTree = "<group>"; };
+		8DEF7C391DECED3300EEBB53 /* photojournal@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photojournal@2X.png"; path = "Project/photojournal@2X.png"; sourceTree = "<group>"; };
+		8DEF7C3A1DECED3300EEBB53 /* photojournal@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photojournal@3X.png"; path = "Project/photojournal@3X.png"; sourceTree = "<group>"; };
+		8DEF7C3E1DED050A00EEBB53 /* PhotoJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoJournal.swift; sourceTree = "<group>"; };
+		8DEF7C401DED052500EEBB53 /* PhotoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +164,24 @@
 				8D4EEFCD1DCE3D260018A6FA /* ticket@3X.png */,
 				8D4EEFCE1DCE3D260018A6FA /* ticket@1X.png */,
 				8D4EEFCF1DCE3D260018A6FA /* ticket@2X.png */,
+				8D99E6FC1DEA849600A1AE31 /* train@2X.png */,
+				8D99E6FD1DEA849600A1AE31 /* train@3X.png */,
+				8D99E6FE1DEA849600A1AE31 /* train@1X.png */,
+				8D99E6FF1DEA849600A1AE31 /* car@1X.png */,
+				8D99E7001DEA849600A1AE31 /* car@3X.png */,
+				8D99E7011DEA849600A1AE31 /* car@2X.png */,
+				8D99E7021DEA849600A1AE31 /* plane@2X.png */,
+				8D99E7031DEA849600A1AE31 /* plane@3X.png */,
+				8D99E7041DEA849600A1AE31 /* plane@1X.png */,
+				8DEF7C261DEC992300EEBB53 /* walk@1X.png */,
+				8DEF7C281DEC992300EEBB53 /* walk@2X.png */,
+				8DEF7C2A1DEC992300EEBB53 /* walk@3X.png */,
+				8DEF7C271DEC992300EEBB53 /* pin@1X.png */,
+				8DEF7C291DEC992300EEBB53 /* pin@2X.png */,
+				8DEF7C2B1DEC992300EEBB53 /* pin@3X.png */,
+				8DEF7C381DECED3300EEBB53 /* photojournal@1X.png */,
+				8DEF7C391DECED3300EEBB53 /* photojournal@2X.png */,
+				8DEF7C3A1DECED3300EEBB53 /* photojournal@3X.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +211,14 @@
 				8D4EF00E1DCEB78D0018A6FA /* TravelViewController.swift */,
 				8D4EF0121DCEBBD40018A6FA /* TicketCell.swift */,
 				8D4EF0101DCEB7AD0018A6FA /* TicketBook.swift */,
+				8DEF7C321DECA8C500EEBB53 /* TicketItem.swift */,
+				8D99E6F41DEA785C00A1AE31 /* PhotoViewController.swift */,
+				8DEF7C361DECEAA400EEBB53 /* PhotoCell.swift */,
+				8DEF7C3E1DED050A00EEBB53 /* PhotoJournal.swift */,
+				8DEF7C401DED052500EEBB53 /* PhotoItem.swift */,
+				8D99E6F61DEA7A0500A1AE31 /* ImageHelper.swift */,
+				8D99E6F81DEA7A2300A1AE31 /* SavedData.swift */,
+				8D99E6FA1DEA7A4200A1AE31 /* SaveData.swift */,
 				8D6A61221DC009600092ACC3 /* Main.storyboard */,
 				8D4EF01A1DCECDEF0018A6FA /* Localizable.strings */,
 				8D6A61281DC009600092ACC3 /* Assets.xcassets */,
@@ -210,22 +288,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEF7C3B1DECED3300EEBB53 /* photojournal@1X.png in Resources */,
+				8DEF7C2C1DEC992300EEBB53 /* walk@1X.png in Resources */,
 				8D4EF0181DCECDEF0018A6FA /* Localizable.strings in Resources */,
 				8D6A612C1DC009600092ACC3 /* LaunchScreen.storyboard in Resources */,
 				8D4EEFD71DCE3D260018A6FA /* ticket@1X.png in Resources */,
+				8DEF7C2F1DEC992300EEBB53 /* pin@2X.png in Resources */,
 				8D4EEFDC1DCE3FFF0018A6FA /* travelkit@3X.png in Resources */,
 				8D4EEFD61DCE3D260018A6FA /* ticket@3X.png in Resources */,
+				8DEF7C301DEC992300EEBB53 /* walk@3X.png in Resources */,
+				8D99E70A1DEA849600A1AE31 /* car@2X.png in Resources */,
+				8D99E7061DEA849600A1AE31 /* train@3X.png in Resources */,
+				8DEF7C3C1DECED3300EEBB53 /* photojournal@2X.png in Resources */,
 				8D4EEFD31DCE3D260018A6FA /* calendar@2X.png in Resources */,
+				8DEF7C2D1DEC992300EEBB53 /* pin@1X.png in Resources */,
 				8D6A61291DC009600092ACC3 /* Assets.xcassets in Resources */,
+				8D99E70C1DEA849600A1AE31 /* plane@3X.png in Resources */,
+				8D99E7051DEA849600A1AE31 /* train@2X.png in Resources */,
+				8DEF7C3D1DECED3300EEBB53 /* photojournal@3X.png in Resources */,
+				8DEF7C311DEC992300EEBB53 /* pin@3X.png in Resources */,
 				8D4EEFD01DCE3D260018A6FA /* briefcase@3X.png in Resources */,
+				8DEF7C2E1DEC992300EEBB53 /* walk@2X.png in Resources */,
 				8D4EEFDE1DCE3FFF0018A6FA /* travelkit@2X.png in Resources */,
 				8D4EEFD81DCE3D260018A6FA /* ticket@2X.png in Resources */,
 				8D4EEFDD1DCE3FFF0018A6FA /* travelkit@1X.png in Resources */,
 				8D4EEFD21DCE3D260018A6FA /* briefcase@2X.png in Resources */,
+				8D99E7071DEA849600A1AE31 /* train@1X.png in Resources */,
 				8D4EEFE81DCE4BF70018A6FA /* travel.png in Resources */,
+				8D99E70B1DEA849600A1AE31 /* plane@2X.png in Resources */,
 				8D4EEFD41DCE3D260018A6FA /* calendar@1X.png in Resources */,
 				8D4EEFD11DCE3D260018A6FA /* briefcase@1X.png in Resources */,
+				8D99E7091DEA849600A1AE31 /* car@3X.png in Resources */,
 				8D4EEFD51DCE3D260018A6FA /* calendar@3X.png in Resources */,
+				8D99E7081DEA849600A1AE31 /* car@1X.png in Resources */,
+				8D99E70D1DEA849600A1AE31 /* plane@1X.png in Resources */,
 				8D6A61241DC009600092ACC3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,17 +335,25 @@
 			files = (
 				8D4EEFC41DCE39220018A6FA /* ItineraryViewController.swift in Sources */,
 				8DBEAABD1DC5555100F90388 /* SuggestedToDoItem.swift in Sources */,
+				8DEF7C3F1DED050A00EEBB53 /* PhotoJournal.swift in Sources */,
 				8D4EF00F1DCEB78D0018A6FA /* TravelViewController.swift in Sources */,
 				8D6A61211DC009600092ACC3 /* ViewController.swift in Sources */,
 				8DBEAAC11DC55B1A00F90388 /* ToDoCell.swift in Sources */,
+				8DEF7C331DECA8C500EEBB53 /* TicketItem.swift in Sources */,
 				8D4EEFE01DCE41880018A6FA /* Itinerary.swift in Sources */,
 				8D4EEFEA1DCE4D490018A6FA /* LaunchScreenViewController.swift in Sources */,
 				8D4EEFE21DCE449A0018A6FA /* ToGoCell.swift in Sources */,
 				8D4EEFE61DCE46500018A6FA /* SuggestedToGoItem.swift in Sources */,
 				8D4EF0111DCEB7AD0018A6FA /* TicketBook.swift in Sources */,
+				8DEF7C371DECEAA400EEBB53 /* PhotoCell.swift in Sources */,
+				8D99E6F51DEA785C00A1AE31 /* PhotoViewController.swift in Sources */,
+				8D99E6F71DEA7A0500A1AE31 /* ImageHelper.swift in Sources */,
+				8D99E6F91DEA7A2300A1AE31 /* SavedData.swift in Sources */,
 				8D6A61271DC009600092ACC3 /* Project.xcdatamodeld in Sources */,
+				8D99E6FB1DEA7A4200A1AE31 /* SaveData.swift in Sources */,
 				8DBEAABF1DC555AF00F90388 /* PackingList.swift in Sources */,
 				8D4EEFE41DCE46400018A6FA /* ToGoItem.swift in Sources */,
+				8DEF7C411DED052500EEBB53 /* PhotoItem.swift in Sources */,
 				8DBEAABB1DC5549100F90388 /* ToDoItem.swift in Sources */,
 				8D6A611F1DC009600092ACC3 /* AppDelegate.swift in Sources */,
 				8D4EF0131DCEBBD40018A6FA /* TicketCell.swift in Sources */,

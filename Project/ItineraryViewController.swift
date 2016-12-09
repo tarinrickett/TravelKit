@@ -10,6 +10,8 @@ import UIKit
 
 class ItineraryListViewController: UITableViewController {
     
+    var saveddata: SavedData!
+    
     let SUGGESTED_TODOS = 0
     let TODOS = 1
     
@@ -27,6 +29,10 @@ class ItineraryListViewController: UITableViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
+        
+//        let myApp = UIApplication.shared
+//        let myDelegate = myApp.delegate as! AppDelegate
+//        saveddata = myDelegate.saveddata
         
         itinerary = Itinerary()
         if let indexArray = itinerary.generateSuggested() {

@@ -8,27 +8,27 @@
 
 import UIKit
 
-class TicketBook: NSObject {
+class TicketBook: NSObject { //, NSCoding
     
-    var todos: [ToGoItem] = []
+    var todos: [TicketItem] = []
     
     // ================
     //  Manual Methods
     // ================
     
     //generate todo
-    func generateToDo (_ desc: String, _ detail: String) -> Int? {
-        return addToDo(ToGoItem(desc, detail))
+    func generateToDo (_ desc: String, _ detail: String, _ imageSelection: Int) -> Int? {
+        return addToDo(TicketItem(desc, detail, imageSelection))
     }
     
     //manually add new todo from string
-    func addToDo (_ todo: ToGoItem) -> Int {
+    func addToDo (_ todo: TicketItem) -> Int {
         todos.append(todo)
         return todos.index(of: todo)!
     }
     
     //remove todo
-    func removeToDo (_ todo: ToGoItem) {
+    func removeToDo (_ todo: TicketItem) {
         if let index = todos.index(of: todo) {
             todos.remove(at: index)
         }

@@ -8,11 +8,25 @@
 
 import UIKit
 
-class ToDoItem: NSObject {
+class ToDoItem: NSObject, NSCoding {
+    
+    //keys
+    static let bodyKey = "body"
+    //vars
     var body: String
     
     init(_ body: String) {
         self.body = body
+    }
+    
+    //decodes
+    required init(coder aDecoder: NSCoder) {
+        body = aDecoder.decodeObject(forKey: ToDoItem.bodyKey) as! String
+    }
+    
+    //encodes
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(body, forKey: ToDoItem.bodyKey)
     }
     
 }

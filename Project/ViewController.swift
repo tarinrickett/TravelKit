@@ -10,6 +10,8 @@ import UIKit
 
 class PackingListViewController: UITableViewController, UITextFieldDelegate {
     
+    var saveddata: SavedData!
+    
     let SUGGESTED_TODOS = 0
     let TODOS = 1
     
@@ -27,6 +29,10 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 75
+        
+//        let myApp = UIApplication.shared
+//        let myDelegate = myApp.delegate as! AppDelegate
+//        saveddata = myDelegate.saveddata
         
         packingList = PackingList()
         if let indexArray = packingList.generateSuggested() {
@@ -66,6 +72,25 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
         inputToDo.addTextField { (textField) in
             textField.text = "" //no default text
         }
+        //programmatically add photo option
+        inputToDo.addTextField { (textField) in
+            textField.text = "" //no default text
+        }
+        
+        //programmatically add stack view for photo tool bar
+        let photoStackView = UIStackView();
+        //photoStackView.axis = UILayoutConstraintAxisVertical;
+        //photoStackView.distribution = UIStackViewDistributionEqualSpacing;
+        //photoStackView.alignment = UIStackViewAlignmentCenter;
+        photoStackView.spacing = 30;
+        
+        //let takePhotoButton = UIButton();
+        //let choosePhotoButton = UIButton();
+        
+        //[photoStackView addArrangedSubview: view1];
+        photoStackView.translatesAutoresizingMaskIntoConstraints = false;
+        //[self.view addSubview: photoStackView];
+        
         //on OK,
         inputToDo.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "To-Do Add OK"),
                                           style: .default, handler: { (_) in

@@ -8,11 +8,25 @@
 
 import UIKit
 
-class SuggestedToDoItem: NSObject {
+class SuggestedToDoItem: NSObject, NSCoding {
+    
+    //keys
+    static let bodyKey = "body"
+    //vars
     var body: String
     
     init(_ body: String) {
         self.body = body
+    }
+    
+    //decodes
+    required init(coder aDecoder: NSCoder) {
+        body = aDecoder.decodeObject(forKey: SuggestedToDoItem.bodyKey) as! String
+    }
+    
+    //encodes
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(body, forKey: SuggestedToDoItem.bodyKey)
     }
     
 }

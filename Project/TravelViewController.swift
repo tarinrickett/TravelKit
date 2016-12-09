@@ -8,7 +8,9 @@
 
 import UIKit
 
-class TravelViewController: UITableViewController {
+class TravelViewController: UITableViewController, UIPickerViewDelegate {
+    
+    var saveddata: SavedData!
     
     let TODOS = 0
     
@@ -25,7 +27,11 @@ class TravelViewController: UITableViewController {
         tableView.scrollIndicatorInsets = insets
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 150
+        
+//        let myApp = UIApplication.shared
+//        let myDelegate = myApp.delegate as! AppDelegate
+//        saveddata = myDelegate.saveddata
         
         ticketBook = TicketBook()
     }
@@ -46,6 +52,47 @@ class TravelViewController: UITableViewController {
         }
     }
     
+    /////////////////////////////////////
+    // Image Picker Delegate Overrides //
+    /////////////////////////////////////
+    var updateTextField = UITextField()
+    let imageOptions = [NSLocalizedString("Plane", comment: "Plane"),
+                        NSLocalizedString("Train", comment: "Train"),
+                        NSLocalizedString("Car", comment: "Car"),
+                        NSLocalizedString("Walking", comment: "Walking"),
+                        NSLocalizedString("None of the Above", comment: "None of the Above")]
+    var imageSelection = -1
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return imageOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return imageOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch (row) {
+        case 0:
+            imageSelection = 0
+        case 1:
+            imageSelection = 1
+        case 2:
+            imageSelection = 2
+        case 3:
+            imageSelection = 3
+        case 4:
+            imageSelection = 4
+        default:
+            imageSelection = 4
+        }
+        updateTextField.text = self.imageOptions[imageSelection]
+    }
+    
     // manually add new to do
     @IBAction func addToDo (_ sender: AnyObject) {
         //create a pop-up alert
@@ -59,14 +106,22 @@ class TravelViewController: UITableViewController {
         inputToDo.addTextField { (textField) in
             textField.text = "" //no default text
         }
+        
+        let imagePicker = UIPickerView()
+        imagePicker.delegate = self;
+        inputToDo.addTextField { (textField) in
+            textField.inputView = imagePicker;
+            textField.text = "Select a Mode of Transport"
+            self.updateTextField = textField
+        }
+        
         //on OK,
         inputToDo.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Itinerary Add OK"), style: .default, handler: { (_) in
             let bodyTextField = inputToDo.textFields![0]
             let detailTextField = inputToDo.textFields![1]
             //if user entered text,
             if bodyTextField.text != "" {
-                //add to table
-                if let index = self.ticketBook.generateToDo(bodyTextField.text!, detailTextField.text!) {
+                if let index = self.ticketBook.generateToDo(bodyTextField.text!, detailTextField.text!, self.imageSelection) {
                     let indexPath = NSIndexPath(row: index, section: self.TODOS)
                     self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
                 }
@@ -78,7 +133,7 @@ class TravelViewController: UITableViewController {
     
     // get number of sections
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     // do i need this? I don't want section headers I just want indecernable sections
@@ -109,6 +164,7 @@ class TravelViewController: UITableViewController {
             let todo = ticketBook.todos[path.row]
             cell.body?.text = todo.body
             cell.detail?.text = todo.detail
+            cell.updateIcon(todo.imageSelection)
         default:
             cell.body?.text = NSLocalizedString("Unknown", comment: "Ticket Unknown")
             cell.detail?.text = NSLocalizedString("Unknown", comment: "Ticket Unknown")
