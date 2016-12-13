@@ -43,7 +43,7 @@ class TripViewController: UITableViewController, UITextFieldDelegate {
     }
     
     // toggle edit mode
-    @IBAction func toggleEditMode(_ sender: UIButton) {
+    @IBAction func toggleEditMode(_ sender: AnyObject) {
         if isEditing == false {
             setEditing(true, animated: true)
             sender.setTitle(NSLocalizedString("Done", comment: "To-Do Done"),
@@ -61,11 +61,7 @@ class TripViewController: UITableViewController, UITextFieldDelegate {
         let inputTrip = UIAlertController(title: "Add a new trip",
                                           message: "Enter a location",
                                           preferredStyle: .alert)
-        //programmatically add text field for inputting a to-do item
-        inputTrip.addTextField { (textField) in
-            textField.text = "" //no default text
-        }
-        //programmatically add photo option
+        //programmatically add text field for inputting a location (name)
         inputTrip.addTextField { (textField) in
             textField.text = "" //no default text
         }

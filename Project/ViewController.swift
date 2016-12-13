@@ -72,24 +72,6 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
         inputToDo.addTextField { (textField) in
             textField.text = "" //no default text
         }
-        //programmatically add photo option
-        inputToDo.addTextField { (textField) in
-            textField.text = "" //no default text
-        }
-        
-        //programmatically add stack view for photo tool bar
-        let photoStackView = UIStackView();
-        //photoStackView.axis = UILayoutConstraintAxisVertical;
-        //photoStackView.distribution = UIStackViewDistributionEqualSpacing;
-        //photoStackView.alignment = UIStackViewAlignmentCenter;
-        photoStackView.spacing = 30;
-        
-        //let takePhotoButton = UIButton();
-        //let choosePhotoButton = UIButton();
-        
-        //[photoStackView addArrangedSubview: view1];
-        photoStackView.translatesAutoresizingMaskIntoConstraints = false;
-        //[self.view addSubview: photoStackView];
         
         //on OK,
         inputToDo.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "To-Do Add OK"),
@@ -204,6 +186,12 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
         default:
             break
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let selected = packingList.todos[indexPath.row]
+        //programmatically set gray text
+        //programmatically set strikethrough text
     }
     
     //

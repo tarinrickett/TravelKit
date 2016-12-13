@@ -489,7 +489,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFs-3n-oCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="bST-le-wbg">
                     <connections>
-                        <segue destination="QPB-xs-l2w" kind="show" id="f9b-yB-NV2"/>
+                        <segue destination="Way-lA-10l" kind="show" id="jQo-IV-074"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -516,9 +516,17 @@
                                         </label>
                                         <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftp-0X-tZN">
                                             <items>
-                                                <barButtonItem title="Edit" id="Pn4-uC-OhD"/>
+                                                <barButtonItem title="Edit" id="Pn4-uC-OhD">
+                                                    <connections>
+                                                        <action selector="toggleEditMode:" destination="Way-lA-10l" id="gqj-yU-lF5"/>
+                                                    </connections>
+                                                </barButtonItem>
                                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="jUy-s5-a2d"/>
-                                                <barButtonItem title="+" id="ONs-RP-pi6"/>
+                                                <barButtonItem title="+" id="ONs-RP-pi6">
+                                                    <connections>
+                                                        <action selector="addTrip:" destination="Way-lA-10l" id="EVp-01-O6X"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </items>
                                         </toolbar>
                                     </subviews>
@@ -534,15 +542,27 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Mp2-KG-HpP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TripCell" id="Mp2-KG-HpP" customClass="TripCell" customModule="Project" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="328" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mp2-KG-HpP" id="hC4-zx-Giv">
                                     <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDr-CJ-V2K">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BDr-CJ-V2K" firstAttribute="centerX" secondItem="hC4-zx-Giv" secondAttribute="centerX" id="EHO-tZ-Q5G"/>
+                                        <constraint firstItem="BDr-CJ-V2K" firstAttribute="centerY" secondItem="hC4-zx-Giv" secondAttribute="centerY" id="e3W-oi-2b0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
                                 <connections>
+                                    <outlet property="location" destination="BDr-CJ-V2K" id="ZXQ-Fn-hpP"/>
                                     <outletCollection property="gestureRecognizers" destination="due-LY-Rvj" appends="YES" id="FeN-Gf-WTo"/>
                                 </connections>
                             </tableViewCell>
@@ -554,9 +574,13 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sO-dD-FzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="due-LY-Rvj"/>
+                <tapGestureRecognizer id="due-LY-Rvj">
+                    <connections>
+                        <segue destination="QPB-xs-l2w" kind="show" id="YW7-xm-k8c"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-790" y="420"/>
+            <point key="canvasLocation" x="-815" y="838"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6gH-xL-TUJ">

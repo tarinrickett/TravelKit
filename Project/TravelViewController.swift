@@ -103,8 +103,17 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
         inputToDo.addTextField { (textField) in
             textField.text = "" //no default text
         }
+        
+        let datePicker = UIDatePicker()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
         inputToDo.addTextField { (textField) in
-            textField.text = "" //no default text
+            textField.inputView = datePicker;
+            textField.text = "Select the Date and Time"
+            textField.text = dateFormatter.string(from: datePicker.date)
+            print("HERE'S A DATE........ :")
+            print(dateFormatter.string(from: datePicker.date))
+            print(datePicker.date)
         }
         
         let imagePicker = UIPickerView()
@@ -118,10 +127,10 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
         //on OK,
         inputToDo.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Itinerary Add OK"), style: .default, handler: { (_) in
             let bodyTextField = inputToDo.textFields![0]
-            let detailTextField = inputToDo.textFields![1]
+            let _detailTextField = inputToDo.textFields![1]
             //if user entered text,
             if bodyTextField.text != "" {
-                if let index = self.ticketBook.generateToDo(bodyTextField.text!, detailTextField.text!, self.imageSelection) {
+                if let index = self.ticketBook.generateToDo(bodyTextField.text!, "Jan 1, 2017 7:30PM", self.imageSelection) {
                     let indexPath = NSIndexPath(row: index, section: self.TODOS)
                     self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
                 }
