@@ -13,8 +13,6 @@ class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var iconXL: NSLayoutConstraint!
     @IBOutlet weak var iconXR: NSLayoutConstraint!
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var nameLabel: UILabel!
     
     var saveddata: SavedData!
     
@@ -81,15 +79,6 @@ class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-    
-    //UITextFieldDelegate: dismiss keyboard and update label on return
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nameField.resignFirstResponder()
-        if (nameField.text != nil) {
-            nameLabel.text! = nameField.text!
-        }
         return true
     }
     

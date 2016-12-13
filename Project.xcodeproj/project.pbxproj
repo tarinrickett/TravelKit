@@ -30,6 +30,10 @@
 		8D4EF0111DCEB7AD0018A6FA /* TicketBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EF0101DCEB7AD0018A6FA /* TicketBook.swift */; };
 		8D4EF0131DCEBBD40018A6FA /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EF0121DCEBBD40018A6FA /* TicketCell.swift */; };
 		8D4EF0181DCECDEF0018A6FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D4EF01A1DCECDEF0018A6FA /* Localizable.strings */; };
+		8D62F0C41DFF8BE90083098F /* PicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62F0C31DFF8BE90083098F /* PicCell.swift */; };
+		8D62F0C61DFF8C1D0083098F /* PicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62F0C51DFF8C1D0083098F /* PicItem.swift */; };
+		8D62F0C81DFF8C910083098F /* PicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62F0C71DFF8C910083098F /* PicDataSource.swift */; };
+		8D62F0CA1DFF8DDA0083098F /* PicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62F0C91DFF8DDA0083098F /* PicViewController.swift */; };
 		8D6A611F1DC009600092ACC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A611E1DC009600092ACC3 /* AppDelegate.swift */; };
 		8D6A61211DC009600092ACC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A61201DC009600092ACC3 /* ViewController.swift */; };
 		8D6A61241DC009600092ACC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6A61221DC009600092ACC3 /* Main.storyboard */; };
@@ -95,6 +99,10 @@
 		8D4EF0151DCEC3D10018A6FA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8D4EF0191DCECDEF0018A6FA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8D4EF01B1DCECDFB0018A6FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8D62F0C31DFF8BE90083098F /* PicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCell.swift; sourceTree = "<group>"; };
+		8D62F0C51DFF8C1D0083098F /* PicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicItem.swift; sourceTree = "<group>"; };
+		8D62F0C71DFF8C910083098F /* PicDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicDataSource.swift; sourceTree = "<group>"; };
+		8D62F0C91DFF8DDA0083098F /* PicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicViewController.swift; sourceTree = "<group>"; };
 		8D6A611B1DC009600092ACC3 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6A611E1DC009600092ACC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D6A61201DC009600092ACC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -212,13 +220,17 @@
 				8D4EF0121DCEBBD40018A6FA /* TicketCell.swift */,
 				8D4EF0101DCEB7AD0018A6FA /* TicketBook.swift */,
 				8DEF7C321DECA8C500EEBB53 /* TicketItem.swift */,
+				8D62F0C91DFF8DDA0083098F /* PicViewController.swift */,
+				8D62F0C31DFF8BE90083098F /* PicCell.swift */,
+				8D62F0C51DFF8C1D0083098F /* PicItem.swift */,
+				8D62F0C71DFF8C910083098F /* PicDataSource.swift */,
+				8D99E6F61DEA7A0500A1AE31 /* ImageHelper.swift */,
+				8D99E6F81DEA7A2300A1AE31 /* SavedData.swift */,
+				8D99E6FA1DEA7A4200A1AE31 /* SaveData.swift */,
 				8D99E6F41DEA785C00A1AE31 /* PhotoViewController.swift */,
 				8DEF7C361DECEAA400EEBB53 /* PhotoCell.swift */,
 				8DEF7C3E1DED050A00EEBB53 /* PhotoJournal.swift */,
 				8DEF7C401DED052500EEBB53 /* PhotoItem.swift */,
-				8D99E6F61DEA7A0500A1AE31 /* ImageHelper.swift */,
-				8D99E6F81DEA7A2300A1AE31 /* SavedData.swift */,
-				8D99E6FA1DEA7A4200A1AE31 /* SaveData.swift */,
 				8D6A61221DC009600092ACC3 /* Main.storyboard */,
 				8D4EF01A1DCECDEF0018A6FA /* Localizable.strings */,
 				8D6A61281DC009600092ACC3 /* Assets.xcassets */,
@@ -342,15 +354,19 @@
 				8DEF7C331DECA8C500EEBB53 /* TicketItem.swift in Sources */,
 				8D4EEFE01DCE41880018A6FA /* Itinerary.swift in Sources */,
 				8D4EEFEA1DCE4D490018A6FA /* LaunchScreenViewController.swift in Sources */,
+				8D62F0C61DFF8C1D0083098F /* PicItem.swift in Sources */,
 				8D4EEFE21DCE449A0018A6FA /* ToGoCell.swift in Sources */,
 				8D4EEFE61DCE46500018A6FA /* SuggestedToGoItem.swift in Sources */,
 				8D4EF0111DCEB7AD0018A6FA /* TicketBook.swift in Sources */,
+				8D62F0C41DFF8BE90083098F /* PicCell.swift in Sources */,
 				8DEF7C371DECEAA400EEBB53 /* PhotoCell.swift in Sources */,
 				8D99E6F51DEA785C00A1AE31 /* PhotoViewController.swift in Sources */,
 				8D99E6F71DEA7A0500A1AE31 /* ImageHelper.swift in Sources */,
+				8D62F0CA1DFF8DDA0083098F /* PicViewController.swift in Sources */,
 				8D99E6F91DEA7A2300A1AE31 /* SavedData.swift in Sources */,
 				8D6A61271DC009600092ACC3 /* Project.xcdatamodeld in Sources */,
 				8D99E6FB1DEA7A4200A1AE31 /* SaveData.swift in Sources */,
+				8D62F0C81DFF8C910083098F /* PicDataSource.swift in Sources */,
 				8DBEAABF1DC555AF00F90388 /* PackingList.swift in Sources */,
 				8D4EEFE41DCE46400018A6FA /* ToGoItem.swift in Sources */,
 				8DEF7C411DED052500EEBB53 /* PhotoItem.swift in Sources */,
