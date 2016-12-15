@@ -10,7 +10,7 @@ import UIKit
 
 class PackingListViewController: UITableViewController, UITextFieldDelegate {
     
-    var saveddata: SavedData!
+//    var saveddata: SavedData!
     
     let SUGGESTED_TODOS = 0
     let TODOS = 1
@@ -30,9 +30,9 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 75
         
-        let myApp = UIApplication.shared
-        let myDelegate = myApp.delegate as! AppDelegate
-        saveddata = myDelegate.saveddata
+//        let myApp = UIApplication.shared
+//        let myDelegate = myApp.delegate as! AppDelegate
+//        saveddata = myDelegate.saveddata
         
         packingList = PackingList()
         if let indexArray = packingList.generateSuggested() {
@@ -187,16 +187,24 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
             break
         }
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let selected = packingList.todos[indexPath.row]
-        //programmatically set gray text
-        //programmatically set strikethrough text
-    }
+
     
     //
     // delgate functions; mostly call helper functions (above)
     //
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ToDoCell
+        if (!cell.checked) {
+            //set todo as checked
+            cell.checked = true
+            //move done todo to bottom of list
+            //moveRow(indexPath, IndexPath(indexPathForRow:[yourArray count]-1 inSection:0))
+        } else {
+            cell.checked = false
+        }
+        cell.updateLabels()
+    }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // call the helper function

@@ -10,7 +10,7 @@ import UIKit
 
 class TravelViewController: UITableViewController, UIPickerViewDelegate {
     
-    var saveddata: SavedData!
+//    var saveddata: SavedData!
     
     let TODOS = 0
     
@@ -29,9 +29,9 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         
-        let myApp = UIApplication.shared
-        let myDelegate = myApp.delegate as! AppDelegate
-        saveddata = myDelegate.saveddata
+//        let myApp = UIApplication.shared
+//        let myDelegate = myApp.delegate as! AppDelegate
+//        saveddata = myDelegate.saveddata
         
         ticketBook = TicketBook()
     }

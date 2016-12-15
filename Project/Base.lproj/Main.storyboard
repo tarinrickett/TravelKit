@@ -128,25 +128,28 @@
                                     <frame key="frameInset" width="375" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-Yc-OfK">
-                                            <frame key="frameInset" width="1000" height="1000"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDj-9M-OTT">
-                                            <frame key="frameInset" width="1000" height="1000"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="461-9K-SL3">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-Yc-OfK">
+                                                    <frame key="frameInset" width="367" height="54"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDj-9M-OTT">
+                                                    <frame key="frameInset" minY="54" width="367" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="nDj-9M-OTT" firstAttribute="leading" secondItem="F7L-fM-RBq" secondAttribute="leadingMargin" constant="8" id="6XE-GG-O64"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="nDj-9M-OTT" secondAttribute="bottom" constant="4" id="GfD-W4-hz6"/>
-                                        <constraint firstItem="nDj-9M-OTT" firstAttribute="top" secondItem="WxL-Yc-OfK" secondAttribute="bottom" constant="12.5" id="Ofe-GL-dlu"/>
-                                        <constraint firstItem="WxL-Yc-OfK" firstAttribute="leading" secondItem="F7L-fM-RBq" secondAttribute="leadingMargin" constant="8" id="hqV-zG-Mcm"/>
-                                        <constraint firstItem="WxL-Yc-OfK" firstAttribute="top" secondItem="F7L-fM-RBq" secondAttribute="topMargin" id="hu3-0w-s3u"/>
+                                        <constraint firstItem="461-9K-SL3" firstAttribute="top" secondItem="F7L-fM-RBq" secondAttribute="top" id="GM4-US-zD4"/>
+                                        <constraint firstAttribute="trailing" secondItem="461-9K-SL3" secondAttribute="trailing" id="Z3L-xw-xOd"/>
+                                        <constraint firstAttribute="bottom" secondItem="461-9K-SL3" secondAttribute="bottom" id="dex-e1-eCB"/>
+                                        <constraint firstItem="461-9K-SL3" firstAttribute="leading" secondItem="F7L-fM-RBq" secondAttribute="leading" constant="8" id="lmO-Lx-GR1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -165,7 +168,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qjy-ek-IuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1985" y="837"/>
+            <point key="canvasLocation" x="1984.5" y="836.5"/>
         </scene>
         <!--Ticket Book-->
         <scene sceneID="yMe-2P-7Js">

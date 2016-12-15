@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var saveddata: SavedData!
+//    var saveddata: SavedData!
     var selectedImage = UIImage(named: "pin.png")
     
     ///////////////////
@@ -31,9 +31,9 @@ class PhotoViewController: UITableViewController, UINavigationControllerDelegate
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 185
         
-        let myApp = UIApplication.shared
-        let myDelegate = myApp.delegate as! AppDelegate
-        saveddata = myDelegate.saveddata
+//        let myApp = UIApplication.shared
+//        let myDelegate = myApp.delegate as! AppDelegate
+//        saveddata = myDelegate.saveddata
         
         photoJournal = PhotoJournal()
         

@@ -10,7 +10,7 @@ import UIKit
 
 class TripViewController: UITableViewController, UITextFieldDelegate {
     
-    var saveddata: SavedData!
+//    var saveddata: SavedData!
     
     let TRIPS = 1
     
@@ -28,10 +28,10 @@ class TripViewController: UITableViewController, UITextFieldDelegate {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 75
-        
-        let myApp = UIApplication.shared
-        let myDelegate = myApp.delegate as! AppDelegate
-        saveddata = myDelegate.saveddata
+//        
+//        let myApp = UIApplication.shared
+//        let myDelegate = myApp.delegate as! AppDelegate
+//        saveddata = myDelegate.saveddata
         
         tripList = TripList()
         

@@ -14,7 +14,7 @@ class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var iconXL: NSLayoutConstraint!
     @IBOutlet weak var iconXR: NSLayoutConstraint!
     
-    var saveddata: SavedData!
+//    var saveddata: SavedData!
     
     //alpha and color animation
     func iconFadeIn() {
@@ -85,9 +85,9 @@ class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let myApp = UIApplication.shared
-        let myDelegate = myApp.delegate as! AppDelegate
-        saveddata = myDelegate.saveddata
+//        let myApp = UIApplication.shared
+//        let myDelegate = myApp.delegate as! AppDelegate
+//        saveddata = myDelegate.saveddata
         iconFadeIn()
     }
     

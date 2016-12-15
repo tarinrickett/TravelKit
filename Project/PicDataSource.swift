@@ -78,7 +78,7 @@ class PicDataSource: NSObject, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! PicCell
         
         let pic = pix[indexPath.row]
-        cell.imageView.image = ImageHelper.getImage(forUID: pic.imageID)!
+        cell.imageView.image = UIImage(named: pic.imageID)
         
         return cell
     }
