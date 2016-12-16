@@ -60,6 +60,7 @@
 		8DEBA1261E038A0B00CA7673 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA1251E038A0B00CA7673 /* Locations.swift */; };
 		8DEBA1281E0392CD00CA7673 /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA1271E0392CD00CA7673 /* WeatherFetcher.swift */; };
 		8DEBA12A1E0392E700CA7673 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA1291E0392E700CA7673 /* Weather.swift */; };
+		8DEBA12C1E03C67200CA7673 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA12B1E03C67200CA7673 /* Suggestions.swift */; };
 		8DEBA5371E009E2800029437 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA5361E009E2800029437 /* TripViewController.swift */; };
 		8DEBA5391E009E9700029437 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA5381E009E9700029437 /* Trip.swift */; };
 		8DEBA53B1E009EB700029437 /* TripList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA53A1E009EB700029437 /* TripList.swift */; };
@@ -138,6 +139,7 @@
 		8DEBA1251E038A0B00CA7673 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		8DEBA1271E0392CD00CA7673 /* WeatherFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
 		8DEBA1291E0392E700CA7673 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		8DEBA12B1E03C67200CA7673 /* Suggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		8DEBA5361E009E2800029437 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripViewController.swift; path = ../TripViewController.swift; sourceTree = "<group>"; };
 		8DEBA5381E009E9700029437 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		8DEBA53A1E009EB700029437 /* TripList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripList.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				8D6A61201DC009600092ACC3 /* ViewController.swift */,
 				8DBEAAC01DC55B1A00F90388 /* ToDoCell.swift */,
 				8DBEAABE1DC555AF00F90388 /* PackingList.swift */,
+				8DEBA12B1E03C67200CA7673 /* Suggestions.swift */,
 				8DBEAABA1DC5549100F90388 /* ToDoItem.swift */,
 				8DBEAABC1DC5555100F90388 /* SuggestedToDoItem.swift */,
 				8D4EEFC31DCE39220018A6FA /* ItineraryViewController.swift */,
@@ -369,6 +372,7 @@
 				8DEBA5391E009E9700029437 /* Trip.swift in Sources */,
 				8D4EEFC41DCE39220018A6FA /* ItineraryViewController.swift in Sources */,
 				8DBEAABD1DC5555100F90388 /* SuggestedToDoItem.swift in Sources */,
+				8DEBA12C1E03C67200CA7673 /* Suggestions.swift in Sources */,
 				8DEBA5371E009E2800029437 /* TripViewController.swift in Sources */,
 				8DEF7C3F1DED050A00EEBB53 /* PhotoJournal.swift in Sources */,
 				8D4EF00F1DCEB78D0018A6FA /* TravelViewController.swift in Sources */,
