@@ -8,16 +8,43 @@
 
 import UIKit
 
-class TripViewController: UITableViewController, UITextFieldDelegate {
+class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate {
     
 //    var saveddata: SavedData!
     
     let TRIPS = 1
-    
     var tripList: TripList!
+
+    @IBOutlet weak var welcomeView: UIView!
+    @IBOutlet weak var welcomeY: NSLayoutConstraint!
+    
+    //dismiss welcome view
+    func viewSlideUp() {
+        //set varbs
+//        let height = view.frame.height
+//        self.welcomeY.constant += height
+//        //animate
+//        UIView.animate(
+//            withDuration: 2,
+//            delay: 2,
+//            options: [.curveLinear],
+//            animations: { () -> Void in
+//                self.view.layoutIfNeeded()
+//            }
+//        )
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //customize nav bar appearance
+        navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: (21/255.0),
+                                                                   green: (189/255.0),
+                                                                   blue: (177/255.0), alpha: 1.0)
+        navigationController?.navigationBar.tintColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let plusButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.done, target: self, action: #selector(addTrip))
+        navigationItem.setRightBarButton(plusButton, animated: false);
+        print(navigationItem.rightBarButtonItem?.action)
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
@@ -34,6 +61,7 @@ class TripViewController: UITableViewController, UITextFieldDelegate {
 //        saveddata = myDelegate.saveddata
         
         tripList = TripList()
+        viewSlideUp()
         
     }
     
@@ -55,6 +83,30 @@ class TripViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    //////////////////////
+    // PICKER DELEGATES //
+    //////////////////////
+    var updateTextField = UITextField()
+    var citySelection = -1
+    let cities = Locations().cities
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cities.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        citySelection = row
+        return cities[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        updateTextField.text = self.cities[citySelection]
+    }
+    
     // manually add new to do
     @IBAction func addTrip (_ sender: AnyObject) {
         //create a pop-up alert
@@ -62,23 +114,13 @@ class TripViewController: UITableViewController, UITextFieldDelegate {
                                           message: "Enter a location",
                                           preferredStyle: .alert)
         //programmatically add text field for inputting a location (name)
-        inputTrip.addTextField { (textField) in
-            textField.text = "" //no default text
+        let locationsPicker = UIPickerView()
+        locationsPicker.delegate = self
+        inputTrip.addTextField{ (textField) in
+            textField.text = ""
+            textField.inputView = locationsPicker;
+            self.updateTextField = textField
         }
-        
-        //programmatically add stack view for photo tool bar
-        let photoStackView = UIStackView();
-        //photoStackView.axis = UILayoutConstraintAxisVertical;
-        //photoStackView.distribution = UIStackViewDistributionEqualSpacing;
-        //photoStackView.alignment = UIStackViewAlignmentCenter;
-        photoStackView.spacing = 30;
-        
-        //let takePhotoButton = UIButton();
-        //let choosePhotoButton = UIButton();
-        
-        //[photoStackView addArrangedSubview: view1];
-        photoStackView.translatesAutoresizingMaskIntoConstraints = false;
-        //[self.view addSubview: photoStackView];
         
         //on OK,
         inputTrip.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "To-Do Add OK"),
@@ -87,7 +129,7 @@ class TripViewController: UITableViewController, UITextFieldDelegate {
                                             //if user entered text,
                                             if textField.text != "" {
                                                 //add to table
-                                                if let index = self.tripList.generateTrip(textField.text!) {
+                                                if let index = self.getWeather(textField.text!) {
                                                     let indexPath = NSIndexPath(row: index, section: self.TRIPS)
                                                     self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
                                                 }
@@ -97,19 +139,40 @@ class TripViewController: UITableViewController, UITextFieldDelegate {
         self.present(inputTrip, animated: true, completion: nil)
     }
     
+    ///////////////////
+    // JSON Fetching //
+    ///////////////////
+    var fetcher = WeatherFetcher()
+    var ret: Int?
+    func getWeather(_ location: String) -> Int? {
+        //get weather
+        fetcher.fetchWeather(for: location) {
+            (weatherResult) -> Void in
+            switch(weatherResult) {
+            case let .WeatherSuccess(weather):
+                OperationQueue.main.addOperation() {
+                    self.ret = self.updateWeather(with: weather)
+                }
+            case let .WeatherFailure(error):
+                print("error: \(error)")
+            }
+        }
+        return ret
+    }
+    private func updateWeather(with weather: Weather) -> Int? {
+        print(weather.main)
+        print(weather.temp)
+        return self.tripList.generateTrip("London", weather.main!, weather.temp!)
+    }
+    
     // get number of sections
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
-    // do i need this? I don't want section headers I just want indecernable sections
+    // i don't want section headers
     func getSectionHeader (_ sectionNumber: Int) -> String? {
-        switch sectionNumber {
-        case TRIPS:
-            return "My Trips"
-        default:
-            return nil
-        }
+        return nil
     }
     
     func getNumberOfRowsInSection(_ sectionNumber: Int) -> Int {
@@ -182,6 +245,14 @@ class TripViewController: UITableViewController, UITextFieldDelegate {
     //
     // delgate functions; mostly call helper functions (above)
     //
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\n\n\n\n\n\n\n")
+        print("OKAY YOU SELECTED SOMETHING..........")
+        //on select row,
+        //programmatically transition to that view
+    }
+
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // call the helper function

@@ -57,6 +57,9 @@
 		8DBEAABD1DC5555100F90388 /* SuggestedToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBEAABC1DC5555100F90388 /* SuggestedToDoItem.swift */; };
 		8DBEAABF1DC555AF00F90388 /* PackingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBEAABE1DC555AF00F90388 /* PackingList.swift */; };
 		8DBEAAC11DC55B1A00F90388 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBEAAC01DC55B1A00F90388 /* ToDoCell.swift */; };
+		8DEBA1261E038A0B00CA7673 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA1251E038A0B00CA7673 /* Locations.swift */; };
+		8DEBA1281E0392CD00CA7673 /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA1271E0392CD00CA7673 /* WeatherFetcher.swift */; };
+		8DEBA12A1E0392E700CA7673 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA1291E0392E700CA7673 /* Weather.swift */; };
 		8DEBA5371E009E2800029437 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA5361E009E2800029437 /* TripViewController.swift */; };
 		8DEBA5391E009E9700029437 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA5381E009E9700029437 /* Trip.swift */; };
 		8DEBA53B1E009EB700029437 /* TripList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBA53A1E009EB700029437 /* TripList.swift */; };
@@ -132,6 +135,9 @@
 		8DBEAABC1DC5555100F90388 /* SuggestedToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedToDoItem.swift; sourceTree = "<group>"; };
 		8DBEAABE1DC555AF00F90388 /* PackingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackingList.swift; sourceTree = "<group>"; };
 		8DBEAAC01DC55B1A00F90388 /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		8DEBA1251E038A0B00CA7673 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		8DEBA1271E0392CD00CA7673 /* WeatherFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
+		8DEBA1291E0392E700CA7673 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		8DEBA5361E009E2800029437 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripViewController.swift; path = ../TripViewController.swift; sourceTree = "<group>"; };
 		8DEBA5381E009E9700029437 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		8DEBA53A1E009EB700029437 /* TripList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripList.swift; sourceTree = "<group>"; };
@@ -215,6 +221,9 @@
 				8D6A611E1DC009600092ACC3 /* AppDelegate.swift */,
 				8D4EEFE91DCE4D490018A6FA /* LaunchScreenViewController.swift */,
 				8DEBA5361E009E2800029437 /* TripViewController.swift */,
+				8DEBA1251E038A0B00CA7673 /* Locations.swift */,
+				8DEBA1271E0392CD00CA7673 /* WeatherFetcher.swift */,
+				8DEBA1291E0392E700CA7673 /* Weather.swift */,
 				8DEBA53C1E009EC600029437 /* TripCell.swift */,
 				8DEBA53A1E009EB700029437 /* TripList.swift */,
 				8DEBA5381E009E9700029437 /* Trip.swift */,
@@ -366,6 +375,7 @@
 				8D6A61211DC009600092ACC3 /* ViewController.swift in Sources */,
 				8DBEAAC11DC55B1A00F90388 /* ToDoCell.swift in Sources */,
 				8DEBA53D1E009EC600029437 /* TripCell.swift in Sources */,
+				8DEBA1261E038A0B00CA7673 /* Locations.swift in Sources */,
 				8DEF7C331DECA8C500EEBB53 /* TicketItem.swift in Sources */,
 				8D4EEFE01DCE41880018A6FA /* Itinerary.swift in Sources */,
 				8D4EEFEA1DCE4D490018A6FA /* LaunchScreenViewController.swift in Sources */,
@@ -388,7 +398,9 @@
 				8DEF7C411DED052500EEBB53 /* PhotoItem.swift in Sources */,
 				8DBEAABB1DC5549100F90388 /* ToDoItem.swift in Sources */,
 				8D6A611F1DC009600092ACC3 /* AppDelegate.swift in Sources */,
+				8DEBA1281E0392CD00CA7673 /* WeatherFetcher.swift in Sources */,
 				8D4EF0131DCEBBD40018A6FA /* TicketCell.swift in Sources */,
+				8DEBA12A1E0392E700CA7673 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,13 +19,15 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //add + to navbar
+        let plusButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.done, target: self, action: #selector(addToDo))
+        navigationItem.rightBarButtonItem = plusButton
+        print(navigationItem.rightBarButtonItem?.action)
+        
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
-        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         
@@ -76,20 +78,7 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch (row) {
-        case 0:
-            imageSelection = 0
-        case 1:
-            imageSelection = 1
-        case 2:
-            imageSelection = 2
-        case 3:
-            imageSelection = 3
-        case 4:
-            imageSelection = 4
-        default:
-            imageSelection = 4
-        }
+        imageSelection = row
         updateTextField.text = self.imageOptions[imageSelection]
     }
     
@@ -117,7 +106,7 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
         }
         
         let imagePicker = UIPickerView()
-        imagePicker.delegate = self;
+        imagePicker.delegate = self
         inputToDo.addTextField { (textField) in
             textField.inputView = imagePicker;
             textField.text = "Select a Mode of Transport"

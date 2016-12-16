@@ -23,6 +23,11 @@ class PhotoViewController: UITableViewController, UINavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //add + to navbar
+        let plusButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.done, target: self, action: #selector(addPhoto))
+        navigationItem.rightBarButtonItem = plusButton
+        print(navigationItem.rightBarButtonItem?.action)
+        
         //table setup
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)

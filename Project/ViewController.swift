@@ -18,15 +18,19 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
     var packingList: PackingList!
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        //add + to navbar
+        let plusButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.done, target: self, action: #selector(addToDo))
+        navigationItem.rightBarButtonItem = plusButton
+        print(navigationItem.rightBarButtonItem?.action)
+        
+        //set up view
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
-        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 75
         
