@@ -10,7 +10,11 @@ import UIKit
 
 class Locations: NSObject {
 
-    let cities = [
+   static func getCode(_ location: String) -> String {
+        return codes[cities.index(of: location)!]
+    }
+    
+    static let cities = [
         "London",
         "New York",
         "Oxford",
@@ -18,7 +22,7 @@ class Locations: NSObject {
         "Sydney"
     ]
     
-    let codes = [
+    static let codes = [
         "2643743",
         "5128638",
         "2640729",

@@ -44,7 +44,6 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
         navigationController?.navigationBar.tintColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         let plusButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.done, target: self, action: #selector(addTrip))
         navigationItem.setRightBarButton(plusButton, animated: false);
-        print(navigationItem.rightBarButtonItem?.action)
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
@@ -88,7 +87,7 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     //////////////////////
     var updateTextField = UITextField()
     var citySelection = -1
-    let cities = Locations().cities
+    let cities = Locations.cities
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -129,7 +128,9 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
                                             //if user entered text,
                                             if textField.text != "" {
                                                 //add to table
-                                                if let index = self.getWeather(textField.text!) {
+                                                if let index = self.getWeather(Locations.getCode(textField.text!)) {
+                                                    print("the index is fucking: ")
+                                                    print(index)
                                                     let indexPath = NSIndexPath(row: index, section: self.TRIPS)
                                                     self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
                                                 }
@@ -143,26 +144,30 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     // JSON Fetching //
     ///////////////////
     var fetcher = WeatherFetcher()
-    var ret: Int?
+    var returnIndex: Int?
     func getWeather(_ location: String) -> Int? {
         //get weather
-        fetcher.fetchWeather(for: location) {
-            (weatherResult) -> Void in
+        fetcher.fetchWeather(for: location) { (weatherResult) -> Void in
             switch(weatherResult) {
             case let .WeatherSuccess(weather):
                 OperationQueue.main.addOperation() {
-                    self.ret = self.updateWeather(with: weather)
+                    self.returnIndex = self.updateWeather(with: weather)
+                    print("self.updateWeather is:")
+                    print(self.returnIndex)
                 }
             case let .WeatherFailure(error):
                 print("error: \(error)")
             }
+            print("reached the end of fetcher.fetchWeather...")
         }
-        return ret
+        print("finally exited fetcher.fetchWeather")
+        return self.returnIndex
     }
-    private func updateWeather(with weather: Weather) -> Int? {
+    private func updateWeather(with weather: TripItem) -> Int? {
+        print(weather.location)
         print(weather.main)
         print(weather.temp)
-        return self.tripList.generateTrip("London", weather.main!, weather.temp!)
+        return self.tripList.generateTrip(weather.location!, weather.main!, weather.temp!)
     }
     
     // get number of sections
@@ -204,7 +209,7 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
         switch(path.section) {
         case TRIPS:
             let trip = tripList.trips[path.row]
-            verifyDelete(trip.location, {
+            verifyDelete(trip.location!, {
                 (action) -> Void in
                 self.tripList.removeTrip(trip)
                 self.tableView.deleteRows(at: [path], with: .automatic)
@@ -247,8 +252,6 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     //
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\n\n\n\n\n\n\n")
-        print("OKAY YOU SELECTED SOMETHING..........")
         //on select row,
         //programmatically transition to that view
     }

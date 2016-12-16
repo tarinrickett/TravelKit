@@ -23,6 +23,7 @@ class TripList: NSObject {
     
     //manually add new todo from string
     func addTrip (_ trip: TripItem) -> Int {
+        print("just appended trip")
         trips.append(trip)
         return trips.index(of: trip)!
     }

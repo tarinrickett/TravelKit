@@ -16,7 +16,7 @@ enum WeatherError: Error {
 
 //throw success or failure result
 enum WeatherResult {
-    case WeatherSuccess(Weather)
+    case WeatherSuccess(TripItem)
     case WeatherFailure(Error)
 }
 
@@ -48,7 +48,7 @@ class WeatherFetcher {
     private static func getURL(for location: String) -> URL {
         var components = URLComponents(string: url)!
         var queryItems = [URLQueryItem]()
-        queryItems.append(URLQueryItem(name: "q", value: location))
+        queryItems.append(URLQueryItem(name: "id", value: location))
         queryItems.append(URLQueryItem(name: "APPID", value: "9a9484ed07694b9dc82b020326341829"))
         components.queryItems = queryItems
         return components.url!
@@ -58,16 +58,15 @@ class WeatherFetcher {
         do {
             let jsonObject: Any = try JSONSerialization.jsonObject(with: json, options: [])
             guard let jsonDict = jsonObject as? [String:AnyObject],
-                let _ = jsonDict["name"] as? String,
+                let location = jsonDict["name"] as? String,
                 let temp = jsonDict["main"] as? [String:AnyObject],
-                let name = jsonDict["name"] as? String,
                 var forecast = jsonDict["weather"] as? [AnyObject] else {
                     return .WeatherFailure(WeatherError.InvalidWeatherJSONError)
             }
             
             //let weather = all JSON return values
             let forecastWeather = forecast[0]["main"] as? String
-            let weather = Weather(main: forecastWeather, temp: temp["temp"] as? Int)
+            let weather = TripItem(location, forecastWeather!, (temp["temp"] as? Int)!)
             
             return .WeatherSuccess(weather)
         }
