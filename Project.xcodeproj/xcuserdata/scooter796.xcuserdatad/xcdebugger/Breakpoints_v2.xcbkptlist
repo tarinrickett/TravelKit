@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TripViewController.swift"
-            timestampString = "503562662.011879"
+            timestampString = "503611910.109358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "getWeather(_:)"
             landmarkType = "7">
          </BreakpointContent>

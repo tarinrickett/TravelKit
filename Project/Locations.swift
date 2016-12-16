@@ -10,8 +10,12 @@ import UIKit
 
 class Locations: NSObject {
 
-   static func getCode(_ location: String) -> String {
+    static func getCode(_ location: String) -> String {
         return codes[cities.index(of: location)!]
+    }
+    
+    static func getCity(_ location: String) -> String {
+        return cities[codes.index(of: location)!]
     }
     
     static let cities = [

@@ -128,11 +128,20 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
                                             //if user entered text,
                                             if textField.text != "" {
                                                 //add to table
-                                                if let index = self.getWeather(Locations.getCode(textField.text!)) {
-                                                    print("the index is fucking: ")
-                                                    print(index)
+//                                                if let index = self.getWeather(Locations.getCode(textField.text!)) {
+//                                                    print("the index is fucking: ")
+//                                                    print(index)
+//                                                    let indexPath = NSIndexPath(row: index, section: self.TRIPS)
+//                                                    self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+//                                                }
+                                                if let index = self.tripList.generateTrip(textField.text!) {
                                                     let indexPath = NSIndexPath(row: index, section: self.TRIPS)
                                                     self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+                                                    self.tripList.trips[index] = self.getWeather(Locations.getCode(textField.text!))
+                                                    print(self.tripList.trips[index])
+                                                    print(self.tripList.trips[index].location)
+                                                    print(self.tripList.trips[index].main)
+                                                    print(self.tripList.trips[index].temp)
                                                 }
                                             }
         }))
@@ -144,8 +153,8 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     // JSON Fetching //
     ///////////////////
     var fetcher = WeatherFetcher()
-    var returnIndex: Int?
-    func getWeather(_ location: String) -> Int? {
+    var returnIndex = TripItem("")
+    func getWeather(_ location: String) -> TripItem {
         //get weather
         fetcher.fetchWeather(for: location) { (weatherResult) -> Void in
             switch(weatherResult) {
@@ -161,13 +170,16 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
             print("reached the end of fetcher.fetchWeather...")
         }
         print("finally exited fetcher.fetchWeather")
-        return self.returnIndex
+        if (returnIndex.location == "") {
+            returnIndex.location = Locations.getCity(location)
+        }
+        return returnIndex
     }
-    private func updateWeather(with weather: TripItem) -> Int? {
+    private func updateWeather(with weather: TripItem) -> TripItem {
         print(weather.location)
         print(weather.main)
         print(weather.temp)
-        return self.tripList.generateTrip(weather.location!, weather.main!, weather.temp!)
+        return TripItem(weather.location!, weather.main!, weather.temp!)
     }
     
     // get number of sections

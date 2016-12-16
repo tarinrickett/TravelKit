@@ -20,4 +20,8 @@ class TripItem: NSObject { //, NSCoding
         self.temp = temp
     }
     
+    init(_ location: String) {
+        self.location = location
+    }
+    
 }

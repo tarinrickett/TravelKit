@@ -17,6 +17,9 @@ class TripList: NSObject {
     // ================
     
     //generate trip
+    func generateTrip (_ location: String) -> Int? {
+        return addTrip(TripItem(location))
+    }
     func generateTrip (_ location: String, _ weather: String, _ temp: Int) -> Int? {
         return addTrip(TripItem(location, weather, temp))
     }
