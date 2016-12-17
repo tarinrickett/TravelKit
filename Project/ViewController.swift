@@ -10,8 +10,6 @@ import UIKit
 
 class PackingListViewController: UITableViewController, UITextFieldDelegate {
     
-//    var saveddata: SavedData!
-    
     let SUGGESTED_TODOS = 0
     let TODOS = 1
     
@@ -22,9 +20,9 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         //add + to navbar
+        //for some reason this isn't working so like whatever
         let plusButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.done, target: self, action: #selector(addToDo))
         navigationItem.rightBarButtonItem = plusButton
-        print(navigationItem.rightBarButtonItem?.action)
         
         //set up view
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -34,17 +32,7 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 75
         
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
-        
         packingList = PackingList()
-        if let indexArray = packingList.generateSuggested() {
-            for index in indexArray {
-                let indexPath = NSIndexPath(row: index, section: TODOS)
-                tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
-            }
-        }
         
     }
 
@@ -114,7 +102,7 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
     func getNumberOfRowsInSection(_ sectionNumber: Int) -> Int {
         switch(sectionNumber) {
         case SUGGESTED_TODOS:
-            return packingList.suggestedToDos.count
+            return PackingList.suggestedToDos.count
         case TODOS:
             return packingList.todos.count
         default:
@@ -128,7 +116,7 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
         
         switch(path.section) {
         case SUGGESTED_TODOS:
-            let todo = packingList.suggestedToDos[path.row]
+            let todo = PackingList.suggestedToDos[path.row]
             cell.body?.text = todo.body
         case TODOS:
             let todo = packingList.todos[path.row]
@@ -144,7 +132,7 @@ class PackingListViewController: UITableViewController, UITextFieldDelegate {
     func deleteRow(_ path: IndexPath) {
         switch(path.section) {
         case SUGGESTED_TODOS:
-            let todo = packingList.suggestedToDos[path.row]
+            let todo = PackingList.suggestedToDos[path.row]
             verifyDelete(todo.body, {
                 (action) -> Void in
                 self.packingList.removeSuggestedToDo(todo)

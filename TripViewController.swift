@@ -14,7 +14,8 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     
     let TRIPS = 1
     var tripList: TripList!
-
+    var selectedIndex = -1
+    
     @IBOutlet weak var welcomeView: UIView!
     @IBOutlet weak var welcomeY: NSLayoutConstraint!
     
@@ -127,21 +128,11 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
                                             let textField = inputTrip.textFields![0]
                                             //if user entered text,
                                             if textField.text != "" {
-                                                //add to table
-//                                                if let index = self.getWeather(Locations.getCode(textField.text!)) {
-//                                                    print("the index is fucking: ")
-//                                                    print(index)
-//                                                    let indexPath = NSIndexPath(row: index, section: self.TRIPS)
-//                                                    self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
-//                                                }
                                                 if let index = self.tripList.generateTrip(textField.text!) {
                                                     let indexPath = NSIndexPath(row: index, section: self.TRIPS)
                                                     self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
-                                                    self.tripList.trips[index] = self.getWeather(Locations.getCode(textField.text!))
-                                                    print(self.tripList.trips[index])
-                                                    print(self.tripList.trips[index].location)
-                                                    print(self.tripList.trips[index].main)
-                                                    print(self.tripList.trips[index].temp)
+                                                    //get weather for inserted trip
+                                                    self.getWeather(Locations.getCode(textField.text!), index)
                                                 }
                                             }
         }))
@@ -153,33 +144,24 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     // JSON Fetching //
     ///////////////////
     var fetcher = WeatherFetcher()
-    var returnIndex = TripItem("")
-    func getWeather(_ location: String) -> TripItem {
+    func getWeather(_ location: String, _ index: Int) {
         //get weather
         fetcher.fetchWeather(for: location) { (weatherResult) -> Void in
             switch(weatherResult) {
             case let .WeatherSuccess(weather):
                 OperationQueue.main.addOperation() {
-                    self.returnIndex = self.updateWeather(with: weather)
-                    print("self.updateWeather is:")
-                    print(self.returnIndex)
+                    //update with this weather for location at this index
+                    self.updateWeather(with: weather, index)
                 }
             case let .WeatherFailure(error):
                 print("error: \(error)")
+                //update with this weather for location at this index
+                self.updateWeather(with: TripItem(Locations.getCity(location)), index)
             }
-            print("reached the end of fetcher.fetchWeather...")
         }
-        print("finally exited fetcher.fetchWeather")
-        if (returnIndex.location == "") {
-            returnIndex.location = Locations.getCity(location)
-        }
-        return returnIndex
     }
-    private func updateWeather(with weather: TripItem) -> TripItem {
-        print(weather.location)
-        print(weather.main)
-        print(weather.temp)
-        return TripItem(weather.location!, weather.main!, weather.temp!)
+    private func updateWeather(with weather: TripItem, _ index: Int) {
+        tripList.trips[index] = TripItem(weather.location!, weather.main!, weather.temp!)
     }
     
     // get number of sections
@@ -264,8 +246,9 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     //
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //on select row,
-        //programmatically transition to that view
+        //programmatically transition to row's view
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "trip", sender: nil)
     }
 
     
@@ -294,6 +277,26 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         moveRow(sourceIndexPath, destinationIndexPath)
     }
+    
+    ////////////
+    // SEGUES //
+    ////////////
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "trip") {
+            let index = selectedIndex
+            print("seguing to: ")
+            print(tripList.trips[index].location)
+            print(tripList.trips[index].main)
+            print(tripList.trips[index].temp)
+            let weatherSuggestions = Suggestions.getSuggestions(tripList.trips[index])
+            PackingList.suggestedToDos = weatherSuggestions
+            
+//            let packingListViewController = destination.viewControllers?[0] as! PackingListViewController
+//            print(packingListViewController)
+            //packingListViewController.packingList.suggestedToDos = weatherSuggestions
+        }
+    }
+
     
 }
 

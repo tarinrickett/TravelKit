@@ -57,7 +57,7 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
     /////////////////////////////////////
     // Image Picker Delegate Overrides //
     /////////////////////////////////////
-    var updateTextField = UITextField()
+    var imageTextField = UITextField()
     let imageOptions = [NSLocalizedString("Plane", comment: "Plane"),
                         NSLocalizedString("Train", comment: "Train"),
                         NSLocalizedString("Car", comment: "Car"),
@@ -79,7 +79,17 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         imageSelection = row
-        updateTextField.text = self.imageOptions[imageSelection]
+        imageTextField.text = self.imageOptions[imageSelection]
+    }
+    
+    //datepicker onchange function
+    var dateTextField = UITextField()
+    let dateFormatter = DateFormatter()
+    @IBAction func datePickerChanged(sender: UIDatePicker) {
+        print("hey it changed!")
+        dateFormatter.dateFormat = "MM/dd/yy @ HH:mm"
+        dateTextField.text = dateFormatter.string(from: sender.date)
+        print(dateFormatter.string(from: sender.date))
     }
     
     // manually add new to do
@@ -94,15 +104,11 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
         }
         
         let datePicker = UIDatePicker()
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US")
+        datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
         inputToDo.addTextField { (textField) in
             textField.inputView = datePicker;
             textField.text = "Select the Date and Time"
-            textField.text = dateFormatter.string(from: datePicker.date)
-            print("HERE'S A DATE........ :")
-            print(dateFormatter.string(from: datePicker.date))
-            print(datePicker.date)
+            self.dateTextField = textField
         }
         
         let imagePicker = UIPickerView()
@@ -110,16 +116,17 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
         inputToDo.addTextField { (textField) in
             textField.inputView = imagePicker;
             textField.text = "Select a Mode of Transport"
-            self.updateTextField = textField
+            self.imageTextField = textField
         }
         
         //on OK,
         inputToDo.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Itinerary Add OK"), style: .default, handler: { (_) in
             let bodyTextField = inputToDo.textFields![0]
-            let _detailTextField = inputToDo.textFields![1]
+            let dateTextField = inputToDo.textFields![1]
             //if user entered text,
             if bodyTextField.text != "" {
-                if let index = self.ticketBook.generateToDo(bodyTextField.text!, "Jan 1, 2017 7:30PM", self.imageSelection) {
+                let date = dateTextField.text!
+                if let index = self.ticketBook.generateToDo(bodyTextField.text!, date, self.imageSelection) {
                     let indexPath = NSIndexPath(row: index, section: self.TODOS)
                     self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
                 }

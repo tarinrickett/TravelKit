@@ -10,45 +10,40 @@ import UIKit
 
 class PackingList: NSObject {
     
-    var suggestedToDos: [SuggestedToDoItem] = []
+    static var suggestedToDos: [SuggestedToDoItem] = []
     var todos: [ToDoItem] = []
     
     // ===================
     //  Suggested Methods
     // ===================
-    
-    //generate todos
-    func generateSuggested () -> [Int]? {
-        let localSuggestions = [
-            SuggestedToDoItem(NSLocalizedString("Good walking shoes", comment: "To-Do Suggestion 1")),
-            SuggestedToDoItem(NSLocalizedString("Toothbrush", comment: "To-Do Suggestion 2")),
-            SuggestedToDoItem(NSLocalizedString("ID / Passport", comment: "To-Do Suggestion 3"))]
-        return addSuggested(localSuggestions)
+
+    func populateSuggested () -> [Int]? {
+        return addSuggested(PackingList.suggestedToDos)
     }
     
     //add new suggested todos array
     func addSuggested (_ todos: [SuggestedToDoItem]) -> [Int] {
         var indexArray: [Int] = []
         for todo in todos {
-            suggestedToDos.append(todo)
-            indexArray.append(suggestedToDos.index(of: todo)!)
+            PackingList.suggestedToDos.append(todo)
+            indexArray.append(PackingList.suggestedToDos.index(of: todo)!)
         }
         return indexArray //todos.index(of: todo)!
     }
     
     //remove suggested todo
     func removeSuggestedToDo (_ todo: SuggestedToDoItem) {
-        if let index = suggestedToDos.index(of: todo) {
-            suggestedToDos.remove(at: index)
+        if let index = PackingList.suggestedToDos.index(of: todo) {
+            PackingList.suggestedToDos.remove(at: index)
         }
     }
     
     //move suggested todo
     func moveSuggestedToDo (_ fromIndex: Int, _ toIndex: Int) {
         if fromIndex != toIndex {
-            let todo = suggestedToDos[fromIndex]
-            suggestedToDos.remove(at: fromIndex)
-            suggestedToDos.insert(todo, at: toIndex)
+            let todo = PackingList.suggestedToDos[fromIndex]
+            PackingList.suggestedToDos.remove(at: fromIndex)
+            PackingList.suggestedToDos.insert(todo, at: toIndex)
         }
     }
     

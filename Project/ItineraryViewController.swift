@@ -199,6 +199,19 @@ class ItineraryListViewController: UITableViewController {
     // delgate functions; mostly call helper functions (above)
     //
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ToGoCell
+        if (!cell.checked) {
+            //set todo as checked
+            cell.checked = true
+            //move done todo to bottom of list
+            //moveRow(indexPath, IndexPath(indexPathForRow:[yourArray count]-1 inSection:0))
+        } else {
+            cell.checked = false
+        }
+        cell.updateLabels()
+    }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // call the helper function
         return getSectionHeader(section)
