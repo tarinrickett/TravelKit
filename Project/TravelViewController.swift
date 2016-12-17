@@ -30,11 +30,7 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
         tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
-        
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
-        
+
         ticketBook = TicketBook()
     }
     
@@ -86,10 +82,8 @@ class TravelViewController: UITableViewController, UIPickerViewDelegate {
     var dateTextField = UITextField()
     let dateFormatter = DateFormatter()
     @IBAction func datePickerChanged(sender: UIDatePicker) {
-        print("hey it changed!")
         dateFormatter.dateFormat = "MM/dd/yy @ HH:mm"
         dateTextField.text = dateFormatter.string(from: sender.date)
-        print(dateFormatter.string(from: sender.date))
     }
     
     // manually add new to do

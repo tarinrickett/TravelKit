@@ -18,21 +18,22 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     
     @IBOutlet weak var welcomeView: UIView!
     @IBOutlet weak var welcomeY: NSLayoutConstraint!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     //dismiss welcome view
     func viewSlideUp() {
-        //set varbs
-//        let height = view.frame.height
-//        self.welcomeY.constant += height
-//        //animate
-//        UIView.animate(
-//            withDuration: 2,
-//            delay: 2,
-//            options: [.curveLinear],
-//            animations: { () -> Void in
-//                self.view.layoutIfNeeded()
-//            }
-//        )
+        UIView.animate(
+            withDuration: 2,
+            delay: 0,
+            options: [.curveLinear],
+            animations: { () -> Void in
+                self.welcomeView.frame.size.height = 100
+                self.welcomeView.backgroundColor = UIColor(colorLiteralRed: (254/255.0),
+                                                    green: (127/255.0),
+                                                    blue: (134/255.0),
+                                                    alpha: 1.0)
+            }
+        )
     }
     
     override func viewDidLoad() {
@@ -55,13 +56,8 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 75
-//        
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
-        
+
         tripList = TripList()
-        viewSlideUp()
         
     }
     
@@ -135,6 +131,7 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
                                                     self.getWeather(Locations.getCode(textField.text!), index)
                                                 }
                                             }
+                                            self.viewSlideUp()
         }))
         //do the pop-up alert
         self.present(inputTrip, animated: true, completion: nil)
@@ -284,16 +281,8 @@ class TripViewController: UITableViewController, UITextFieldDelegate, UIPickerVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "trip") {
             let index = selectedIndex
-            print("seguing to: ")
-            print(tripList.trips[index].location)
-            print(tripList.trips[index].main)
-            print(tripList.trips[index].temp)
             let weatherSuggestions = Suggestions.getSuggestions(tripList.trips[index])
             PackingList.suggestedToDos = weatherSuggestions
-            
-//            let packingListViewController = destination.viewControllers?[0] as! PackingListViewController
-//            print(packingListViewController)
-            //packingListViewController.packingList.suggestedToDos = weatherSuggestions
         }
     }
 

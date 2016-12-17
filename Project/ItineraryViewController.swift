@@ -23,7 +23,6 @@ class ItineraryListViewController: UITableViewController {
         //add + to navbar
         let plusButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.done, target: self, action: #selector(addToDo))
         navigationItem.rightBarButtonItem = plusButton
-        print(navigationItem.rightBarButtonItem?.action)
         
         //set size
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -32,11 +31,7 @@ class ItineraryListViewController: UITableViewController {
         tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
-        
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
-        
+
         itinerary = Itinerary()
         if let indexArray = itinerary.generateSuggested() {
             for index in indexArray {

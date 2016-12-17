@@ -35,11 +35,7 @@ class PhotoViewController: UITableViewController, UINavigationControllerDelegate
         tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 185
-        
-//        let myApp = UIApplication.shared
-//        let myDelegate = myApp.delegate as! AppDelegate
-//        saveddata = myDelegate.saveddata
-        
+
         photoJournal = PhotoJournal()
         
         //image setup

@@ -506,7 +506,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="ID3-74-dGz">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tzb-hq-Noo">
@@ -520,7 +520,7 @@
                                     <color key="backgroundColor" red="0.08235294118" green="0.74117647060000003" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.45882352939999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.08235294118" green="0.74117647060000003" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Tzb-hq-Noo" secondAttribute="trailing" id="7we-rI-VBN"/>
                                 <constraint firstItem="Tzb-hq-Noo" firstAttribute="top" secondItem="ID3-74-dGz" secondAttribute="top" id="kBb-An-mjz"/>
@@ -530,7 +530,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TripCell" id="Mp2-KG-HpP" customClass="TripCell" customModule="Project" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="328" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="631" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mp2-KG-HpP" id="hC4-zx-Giv">
                                     <frame key="frameInset" width="375" height="44"/>
@@ -560,6 +560,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="qjt-bX-ozg"/>
                     <connections>
+                        <outlet property="welcomeLabel" destination="E0j-zz-6Ie" id="etp-aP-T8C"/>
                         <outlet property="welcomeView" destination="ID3-74-dGz" id="28N-uF-uAY"/>
                         <outlet property="welcomeY" destination="l07-10-mAN" id="n9e-V8-cqb"/>
                         <segue destination="QPB-xs-l2w" kind="show" identifier="trip" id="pTo-be-04I"/>
@@ -567,7 +568,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sO-dD-FzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="838"/>
+            <point key="canvasLocation" x="-10.4" y="837.93103448275872"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6gH-xL-TUJ">
